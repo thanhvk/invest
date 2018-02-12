@@ -3,13 +3,4 @@
 {{ else }}
 <h2><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>
 {{ end }}
-<footer class="post-info"><span class="post-meta"><time datetime="{{ .Date.Format "02/01/2006" }}">{{ .Date.Format "02/01/2006" }}</time>
-{{ if isset .Params "tags" }}
-    {{ if gt (len .Params.tags) 0 }}&middot; {{ .Site.Data.l10n.article.tags }}
-        {{ range $i, $v := .Params.tags }}
-        <a href="{{ $.Site.BaseURL }}tags/{{ $v | urlize }}">{{ $v | lower }}</a>{{ if ne (len $.Params.tags) (add $i 1) }}, {{ end }}
-        {{ end }}
-    {{ end }}
-{{ end }}
-</span>
-</footer>
+

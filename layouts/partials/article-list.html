@@ -1,5 +1,5 @@
 <div class="container clearfix">
-    <main role="main" class="content">
+    <main role="main" class="content post-list">
         {{ $paginator := .Paginate (where .Site.Pages "Kind" "page") }}
         {{ range $paginator.Pages }}
             {{ .Render "summary" }}

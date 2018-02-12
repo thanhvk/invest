@@ -1,10 +1,19 @@
 <article class="post post-item">
-    <section class="image">
-        <img src="{{ .Params.image }}" alt="{{ .Params.title }}">
-    </section>
+    <a class="image" href="{{ .Permalink }}" style="background-image: url({{ .Params.image }});">
+    </a>
     <section class="summarize">
         {{ partial "article-header" . }}
-        <p>{{ printf "%s" .Description | markdownify }}&hellip;</p>
-        <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Site.Data.l10n.article.read_more }} &raquo;</a>
+        <p>{{ printf "%s" .Description | markdownify }}</p>
+
+        <footer class="post-info"><span class="post-meta"><time datetime="{{ .Date.Format "02/01/2006" }}">{{ .Date.Format "02/01/2006" }}</time>
+            {{ if isset .Params "tags" }}
+                {{ if gt (len .Params.tags) 0 }}&middot; {{ .Site.Data.l10n.article.tags }}
+                    {{ range $i, $v := .Params.tags }}
+                    <a href="{{ $.Site.BaseURL }}tags/{{ $v | urlize }}">{{ $v | lower }}</a>{{ if ne (len $.Params.tags) (add $i 1) }}, {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            </span>
+        </footer>
     </section>    
 </article>
