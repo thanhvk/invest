@@ -4,10 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{{ if isset .Params "title" }} {{ .Params.Title }} {{ else }} {{ .Site.Title }} {{ end }}</title>
-        <meta name="author" content="{{ .Site.Params.site_author }}">
-        <meta name="description" content="{{ if isset .Params "description" }} {{ .Params.description }} {{ else }} {{ .Site.Params.site_description }} {{ end }}">
-        <meta name="image" content="{{ if isset .Params "image" }} {{ .Params.image | absURL }} {{ else }} {{ .Site.Params.site_image | absURL }} {{ end }}">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="{{ if isset .Params "title" }}{{ .Params.Title }}{{ else }}{{ .Site.Title }}{{ end }}">
+        <meta property="og:author" content="{{ .Site.Params.site_author }}">
+        <meta property="og:description" content="{{ if isset .Params "description" }}{{ .Params.description }}{{ else }}{{ .Site.Params.site_description }}{{ end }}">
+        <meta property="og:image" content="{{ if isset .Params "image" }}{{ .Params.image | absURL }}{{ else }}{{ .Site.Params.site_image | absURL }}{{ end }}">
+        <meta property="og:viewport" content="width=device-width, initial-scale=1">
         {{ .Hugo.Generator }}
 
         <link href="{{ "post/index.xml" | absURL }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />

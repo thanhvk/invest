@@ -606,6 +606,11 @@ hr {
   margin-bottom: 7px;
 }
 
+.post-item h1 a,
+.post-item h1 a:hover {
+  color: #0c90f9;
+}
+
 .post-item p {
   margin-top: 10px;
 }

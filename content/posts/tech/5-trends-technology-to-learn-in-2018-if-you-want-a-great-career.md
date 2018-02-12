@@ -3,7 +3,7 @@ date = "2018-01-26T13:50:46+02:00"
 tags = ["tech", "trend"]
 title = "5 Xu hướng công nghệ để học trong năm 2018 nếu muốn có một sự nghiệp thành công"
 description = "Nếu bạn đang tìm kiếm một nghề nghiệp mới trong thế giới công nghệ và bạn có đủ tham vọng để học, một trong 5 sự lựa chọn nghề nghiệp này là những xu hướng tôi khuyên bạn nên tập trung vào"
-image = "https://cdn-images-1.medium.com/max/800/1*m3vlxneAo50hBQYOZbT_ug.jpeg"
+image = "/img/1_m3vlxneAo50hBQYOZbT_ug.jpeg"
 +++
 
 *Bài viết được lược dịch từ: [hackernoon.com](https://hackernoon.com/5-technology-trends-to-learn-in-2018-if-you-want-a-great-career-caf2e2318abb)*
