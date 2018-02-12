@@ -6,7 +6,7 @@
         <title>{{ if isset .Params "title" }} {{ .Params.Title }} {{ else }} {{ .Site.Title }} {{ end }}</title>
         <meta name="author" content="{{ .Site.Params.site_author }}">
         <meta name="description" content="{{ if isset .Params "description" }} {{ .Params.description }} {{ else }} {{ .Site.Params.site_description }} {{ end }}">
-        <meta name="image" content="{{ if isset .Params "image" }} {{ .Params.image }} {{ else }} {{ .Site.Params.site_image }} {{ end }}">
+        <meta name="image" content="{{ if isset .Params "image" }} {{ .Params.image | absURL }} {{ else }} {{ .Site.Params.site_image | absURL }} {{ end }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {{ .Hugo.Generator }}
 
