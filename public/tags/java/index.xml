@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Invest in yourself</title>
+    <link>https://thelifekiss.com/tags/java/</link>
+    <description>Recent content in Java on Invest in yourself</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
+    <lastBuildDate>Tue, 30 Jan 2018 13:50:46 +0200</lastBuildDate>
+    
+	<atom:link href="https://thelifekiss.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OOP cơ bản (Phần 2) - OOP trong Java</title>
+      <link>https://thelifekiss.com/posts/tech/oop-basic-part-2/</link>
+      <pubDate>Tue, 30 Jan 2018 13:50:46 +0200</pubDate>
+      
+      <guid>https://thelifekiss.com/posts/tech/oop-basic-part-2/</guid>
+      <description>Bài viết được dịch từ: ntu.edu.sg
+Class &amp;amp; Instances Trong Java, một class là một định nghĩa của các đối tượng cùng loại. Nói cách khác, một class là một bản thiết kế, bản mẫu, hoặc nguyên mẫu để định nghĩa và mô tả các thuộc tính tĩnh (static attributes) và các hành vi động (dynamic behavior) chung của tất cả các đối tượng cùng loại.
+Một instance là một trường hợp cụ thể của một class.</description>
+    </item>
+    
+    <item>
+      <title>OOP cơ bản (Phần 1)</title>
+      <link>https://thelifekiss.com/posts/tech/oop-basic-part-1/</link>
+      <pubDate>Fri, 26 Jan 2018 13:50:46 +0200</pubDate>
+      
+      <guid>https://thelifekiss.com/posts/tech/oop-basic-part-1/</guid>
+      <description>Bài viết được dịch từ: ntu.edu.sg
+Tại sao lại là OOP? Giả sử bạn muốn tự lắp cho mình một chiếc máy tính cá nhân, bạn vào một cửa hàng phần cứng và chọn bo mạch chủ, bộ xử lý, RAM, ổ đĩa cứng, vỏ case máy tính, bộ nguồn và lắp chúng lại với nhau. Bạn bật nguồn, và máy chạy. Bạn không cần phải lo lắng CPU là 1 hoặc 6 lõi; bo mạch chủ là 1, 4 hoặc 6 lớp; ổ cứng có 4 tấm hay 6 tấm, đường kính 3 inch hay 5 inch; RAM được sản xuất tại Nhật Bản hay Hàn Quốc, vân vân.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Invest in yourself</title>
+    <link>https://thelifekiss.com/</link>
+    <description>Recent content on Invest in yourself</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
+    <lastBuildDate>Sat, 10 Feb 2018 13:50:46 +0200</lastBuildDate>
+    
+	<atom:link href="https://thelifekiss.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>8 Quy tắc về tiền bạc cho những cặp vợ chồng mới cưới</title>
+      <link>https://thelifekiss.com/posts/invest/8-money-rules-for-newlyweds/</link>
+      <pubDate>Sat, 10 Feb 2018 13:50:46 +0200</pubDate>
+      
+      <guid>https://thelifekiss.com/posts/invest/8-money-rules-for-newlyweds/</guid>
+      <description>Bài viết được dịch từ: investopedia.com
+Nếu bạn mới hoặc sẽ sớm kết hôn, sẽ không còn chỉ mình bạn. Bạn đang kết hợp cuộc sống của mình với vợ/chồng của bạn - nó bao gồm tài chính. Điều quan trọng là phải sớm có các cuộc thảo luận và hành động với tình hình tài chính của cả 2. Dưới đây là tám quy tắc để khởi đầu đúng hướng khi các bạn bắt đầu cuộc sống mới cùng nhau.</description>
+    </item>
+    
+    <item>
+      <title>OOP cơ bản (Phần 2) - OOP trong Java</title>
+      <link>https://thelifekiss.com/posts/tech/oop-basic-part-2/</link>
+      <pubDate>Tue, 30 Jan 2018 13:50:46 +0200</pubDate>
+      
+      <guid>https://thelifekiss.com/posts/tech/oop-basic-part-2/</guid>
+      <description>Bài viết được dịch từ: ntu.edu.sg
+Class &amp;amp; Instances Trong Java, một class là một định nghĩa của các đối tượng cùng loại. Nói cách khác, một class là một bản thiết kế, bản mẫu, hoặc nguyên mẫu để định nghĩa và mô tả các thuộc tính tĩnh (static attributes) và các hành vi động (dynamic behavior) chung của tất cả các đối tượng cùng loại.
+Một instance là một trường hợp cụ thể của một class.</description>
+    </item>
+    
+    <item>
+      <title>5 Xu hướng công nghệ để học trong năm 2018 nếu muốn có một sự nghiệp thành công</title>
+      <link>https://thelifekiss.com/posts/tech/5-trends-technology-to-learn-in-2018-if-you-want-a-great-career/</link>
+      <pubDate>Fri, 26 Jan 2018 13:50:46 +0200</pubDate>
+      
+      <guid>https://thelifekiss.com/posts/tech/5-trends-technology-to-learn-in-2018-if-you-want-a-great-career/</guid>
+      <description>Bài viết được lược dịch từ: hackernoon.com
+Nếu bạn đang tìm kiếm một nghề nghiệp mới trong thế giới công nghệ và bạn có đủ tham vọng để học, một trong 5 sự lựa chọn nghề nghiệp này là những xu hướng tôi khuyên bạn nên tập trung vào. Nó sẽ có tỷ lệ lợi nhuận tốt nhất cho thời gian đầu tư của bạn.
+Những tiêu chí để lựa chọn là:</description>
+    </item>
+    
+    <item>
+      <title>Blockchain làm việc như thế nào (Phần 1)</title>
+      <link>https://thelifekiss.com/posts/tech/how-does-the-blockchain-work-p1/</link>
+      <pubDate>Fri, 26 Jan 2018 13:50:46 +0200</pubDate>
+      
+      <guid>https://thelifekiss.com/posts/tech/how-does-the-blockchain-work-p1/</guid>
+      <description>Bài viết được dịch từ: medium.com
+Blockchain ABC và 123
+Nếu bạn thực sự muốn tham gia vào thế giới thế giới blockchain và tiền kỹ thuật số, thì tôi khuyến khích bạn bắt đầu cuộc hành trình của mình bằng cách đọc 2 sách trắng (white paper) sau:
+Bitcoin: Một hệ thống tiền điện tử ngang hàng
+và
+Ethererum: Một nền tảng ứng dụng phân tán và hợp đồng thông minh thế hệ tiếp theo.</description>
+    </item>
+    
+    <item>
+      <title>OOP cơ bản (Phần 1)</title>
+      <link>https://thelifekiss.com/posts/tech/oop-basic-part-1/</link>
+      <pubDate>Fri, 26 Jan 2018 13:50:46 +0200</pubDate>
+      
+      <guid>https://thelifekiss.com/posts/tech/oop-basic-part-1/</guid>
+      <description>Bài viết được dịch từ: ntu.edu.sg
+Tại sao lại là OOP? Giả sử bạn muốn tự lắp cho mình một chiếc máy tính cá nhân, bạn vào một cửa hàng phần cứng và chọn bo mạch chủ, bộ xử lý, RAM, ổ đĩa cứng, vỏ case máy tính, bộ nguồn và lắp chúng lại với nhau. Bạn bật nguồn, và máy chạy. Bạn không cần phải lo lắng CPU là 1 hoặc 6 lõi; bo mạch chủ là 1, 4 hoặc 6 lớp; ổ cứng có 4 tấm hay 6 tấm, đường kính 3 inch hay 5 inch; RAM được sản xuất tại Nhật Bản hay Hàn Quốc, vân vân.</description>
+    </item>
+    
+  </channel>
+</rss>

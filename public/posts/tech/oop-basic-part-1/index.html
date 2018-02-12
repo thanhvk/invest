@@ -1,0 +1,248 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> OOP cơ bản (Phần 1) </title>
+        <meta name="author" content="Vũ Kim Thành">
+        <meta name="description" content=" Bạn có thể &#34;lắp ráp&#34; một phần mềm bằng cách chọn một bộ phận ở đây, một bộ phận ở kia, và mong đợi chương trình chạy? ">
+        <meta name="image" content=" /img/OOP_Objects_1.png ">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.34" />
+
+        <link href="https://thelifekiss.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Invest in yourself" />
+        <link href="https://thelifekiss.com/post/index.xml" rel="feed" type="application/rss+xml" title="Invest in yourself" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://thelifekiss.com/css/styles.css">
+        <link rel="icon" href="https://thelifekiss.com/favicon.ico">
+        <link rel="apple-touch-icon" href="https://thelifekiss.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://thelifekiss.com/css/highlightjs/monokai.css">
+        <script src="https://thelifekiss.com/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+
+        <style>
+        .site-header h2 .logo {
+        background: url(https://thelifekiss.com/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://thelifekiss.com/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://thelifekiss.com/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2>Knowledge is power</h2>
+              <p>Tôi không sợ khuyết tật trên cơ thể, cái tôi sợ là khuyết tật trong tâm hồn. Cơ thể có thể bỏ cuộc, nhưng đầu óc thì tuyệt đối không - TS. Alan Phan</p>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://thelifekiss.com/" title="Back to home">&laquo; Back to home</a>
+            
+<h1><a href="https://thelifekiss.com/posts/tech/oop-basic-part-1/" title="OOP cơ bản (Phần 1)">OOP cơ bản (Phần 1)</a></h1>
+
+<footer class="post-info"><span class="post-meta"><time datetime="26/01/2018">26/01/2018</time>
+
+    &middot; tags:
+        
+        <a href="https://thelifekiss.com/tags/oop">oop</a>, 
+        
+        <a href="https://thelifekiss.com/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p><em>Bài viết được dịch từ: <a href="https://www.ntu.edu.sg/home/ehchua/programming/java/J3a_OOPBasics.html">ntu.edu.sg</a></em></p>
+
+<h2 id="tại-sao-lại-là-oop">Tại sao lại là OOP?</h2>
+
+<p>Giả sử bạn muốn tự lắp cho mình một chiếc máy tính cá nhân, bạn vào một cửa hàng phần cứng và chọn bo mạch chủ, bộ xử lý, RAM, ổ đĩa cứng, vỏ case máy tính, bộ nguồn và lắp chúng lại với nhau. Bạn bật nguồn, và máy chạy. Bạn không cần phải lo lắng CPU là 1 hoặc 6 lõi; bo mạch chủ là 1, 4 hoặc 6 lớp; ổ cứng có 4 tấm hay 6 tấm, đường kính 3 inch hay 5 inch; RAM được sản xuất tại Nhật Bản hay Hàn Quốc, vân vân. Bạn chỉ cần lắp chúng lại với nhau và chờ máy chạy. Tất nhiên, bạn phải đảm bảo rằng các thiết bị phải tương thích với nhau, nghĩa là bạn chọn một ổ cứng IDE chứ không phải là một ổ cứng SCSI, vì bo mạch chủ của bạn chỉ hỗ trợ IDE; bạn phải chọn RAM với tốc độ chính xác, v.v. Tuy nhiên, không khó để thiết lập một chiếc máy tính từ các thành phần phần cứng.</p>
+
+<p>Tương tự, một chiếc xe được lắp ráp từ các bộ phận khác nhau, chẳng hạn như khung gầm, cửa ra vào, động cơ, bánh xe, phanh và truyền dẫn. Các thành phần có thể tái sử dụng được, ví dụ: bánh xe có thể được sử dụng trong nhiều xe ô tô (có cùng đặc điểm).</p>
+
+<p>Phần cứng, chẳng hạn như máy tính và ô tô, được lắp ráp từ các bộ phận, những thứ có thể tái sử dụng.</p>
+
+<p>Còn phần mềm thì như thế nào? Bạn có thể &ldquo;lắp ráp&rdquo; một phần mềm bằng cách chọn một bộ phận ở đây, một bộ phận ở kia, và mong đợi chương trình chạy? Câu trả lời rõ ràng KHÔNG! Không giống như phần cứng, rất khó để &ldquo;lắp ráp&rdquo; một ứng dụng từ các thành phần phần mềm. Kể từ khi máy tính ra đời 70 năm trước, chúng ta đã viết hàng tấn các chương trình. Tuy nhiên, đối với mỗi ứng dụng mới, chúng ta phải phát minh lại bánh xe và viết chương trình từ đầu!</p>
+
+<p>Tại sao phải phát minh lại bánh xe? Tại sao phải viết lại code? Bạn có thể viết code tốt hơn các chuyên gia?</p>
+
+<h2 id="các-ngôn-ngữ-hướng-thủ-tục">Các ngôn ngữ hướng thủ tục</h2>
+
+<p><img src="https://www.ntu.edu.sg/home/ehchua/programming/java/images/OOP_CFunction.png" alt="" /></p>
+
+<p>Các ngôn ngữ lập trình hướng thủ tục (như C, Fortran, Cobol và Pascal) gặp phải một số hạn chế trong việc tạo ra <em>các thành phần có thể tái sử dụng</em>:</p>
+
+<ol>
+<li>Các chương trình hướng thủ tục được tạo thành từ các function. Function có <em>ít khả năng tái sử dụng</em>. Rất khó để sao chép một function từ một chương trình và sử dụng lại trong một chương trình khác bởi vì function có thể tham chiếu tới các biến toàn cục và các function khác. Nói cách khác, các function không được đóng gói tốt như một đơn vị có thể tái sử dụng được.</li>
+<li>Các ngôn ngữ hướng thủ tục không phù hợp với <em>sự trừu tượng cấp cao</em> để giải quyết các vấn đề trong cuộc sống thực. Ví dụ, các chương trình C sử dụng các cấu trúc như if-else, for-loop, array, method, pointer, những vấn đề ở cấp độ thấp và khó trừu tượng như hệ thống Quản lý Quan hệ Khách hàng (CRM) hoặc trò chơi bóng đá trên máy tính.</li>
+</ol>
+
+<p>Các ngôn ngữ hướng thủ tục truyền thống tách biệt cấu trúc dữ liệu (các biến) và các thuật toán (các function).</p>
+
+<pre><code>Vào đầu những năm 1970, Bộ Quốc phòng Hoa Kỳ (DoD) đã giao cho một lực lượng đặc biệt nhiệm vụ điều tra lý do tại sao ngân sách CNTT của luôn luôn nằm ngoài tầm kiểm soát; nhưng không đem lại nhiều lợi ích. Kết quả điều tra là: 
+
+1. 80% ngân sách dành cho phần mềm (với 20% còn lại là phần cứng). 
+2. Hơn 80% ngân sách cho phần mềm đã được dùng để bảo trì (chỉ còn lại 20% cho phát triển phần mềm mới). 
+3. Các thành phần phần cứng có thể tái sử dụng cho các sản phẩm khác nhau, và không ảnh hưởng lẫn nhau. 
+4. Phần mềm hướng thủ tục thường không có khả năng chia sẻ và không thể sử dụng lại được. Các lỗi phần mềm có thể ảnh hưởng đến các chương trình khác đang chạy trên máy tính. 
+
+Đội đặc biệt đề xuất làm cho phần mềm hoạt động giống như phần cứng. DoD đã thay thế hơn 450 ngôn ngữ máy tính, được sử dụng để xây dựng các hệ thống của DoD, với một ngôn ngữ hướng đối tượng được gọi là Ada.
+</code></pre>
+
+<h2 id="các-ngôn-ngữ-lập-trình-hướng-đối-tượng">Các ngôn ngữ lập trình hướng đối tượng</h2>
+
+<p><img src="https://www.ntu.edu.sg/home/ehchua/programming/java/images/OOP_Objects.png" alt="" /></p>
+
+<p>Các ngôn ngữ lập trình hướng đối tượng (OOP) được thiết kế để xử lý những vấn đề đã nêu ở phần trên.</p>
+
+<ol>
+<li>Đơn vị cơ bản của OOP là một class(lớp), đóng gói các thuộc tính tĩnh và hoạt phương thức trong một &ldquo;box(hộp)&rdquo; và chỉ định giao diện công cộng để sử dụng các box này. Vì các lớp được đóng gói tốt, nên dễ dàng tái sử dụng. Nói cách khác, OOP kết hợp các cấu trúc dữ liệu và các thuật toán của một thực thể phần mềm bên trong cùng một box(hộp).</li>
+<li>Ngôn ngữ OOP cho phép trừu tượng cao, để giải quyết các vấn đề trong cuộc sống thực. Các ngôn ngữ thủ tục truyền thống (như C và Pascal) buộc bạn phải suy nghĩ về cấu trúc của máy tính (ví dụ: bit bộ nhớ, byte, mảng, quyết định, vòng lặp) thay vì suy nghĩ về vấn đề bạn đang cố gắng giải quyết. Các ngôn ngữ OOP (như Java, C ++ và C #) cho phép bạn suy nghĩ về vấn đề cần giải quyết và sử dụng các đối tượng phần mềm để biểu diễn và trừu tượng các thực thể của vấn đề để giải quyết vấn đề.</li>
+</ol>
+
+<p><img src="https://www.ntu.edu.sg/home/ehchua/programming/java/images/OOP_SoccerGame.png" alt="" /></p>
+
+<p>Ví dụ: giả sử bạn muốn viết một trò chơi bóng đá trên máy tính (cái mà tôi cho là một ứng dụng phức tạp). Nó khá khó để mô hình các trò chơi theo ngôn ngữ hướng thủ tục. Nhưng bằng cách sử dụng ngôn ngữ OOP, bạn có thể dễ dàng mô hình hóa chương trình cho phù hợp với &ldquo;những thứ thực tế&rdquo; xuất hiện trong các trò chơi bóng đá.</p>
+
+<ul>
+<li>Player: các thuộc tính bao gồm tên, số, vị trí trên sân&hellip;; các hoạt động bao gồm chạy, nhảy, đá banh,&hellip;</li>
+<li>Trái bóng</li>
+<li>Sân bóng</li>
+<li>Khán giả</li>
+<li>Thời tiết</li>
+</ul>
+
+<p>Quan trọng nhất là một số các class(lớp) này (như Bóng và Khán giả) có thể được sử dụng lại trong một ứng dụng khác, ví dụ: trò chơi bóng rổ trên máy tính, chỉ cần sửa rất ít hoặc không cần sửa đổi.</p>
+
+<h2 id="lợi-thế-của-oop">Lợi thế của OOP</h2>
+
+<p>Các ngôn ngữ hướng thủ tục tập trung vào các function, với function như là đơn vị cơ bản. Trước tiên, bạn cần xác định các function và sau đó suy nghĩ về việc làm thế nào để biểu diễn dữ liệu. Các ngôn ngữ hướng đối tượng tập trung vào các thành phần mà người dùng có thể nhận thức, với các đối tượng như là đơn vị cơ bản. Bạn xác định tất cả các đối tượng bằng cách đặt tất cả các dữ liệu và phương thức mô tả sự tương tác của người dùng với dữ liệu.</p>
+
+<p>Kỹ thuật hướng đối tượng có nhiều lợi ích:</p>
+
+<ul>
+<li>Dễ dàng thiết kế phần mềm như bạn có thể nghĩ trong thực tế chứ không phải là các bit của máy và byte. Bạn đang xử lý các khái niệm cấp cao và trừu tượng. Dễ dàng thiết kế dẫn giúp việc phát triển phần mềm hiệu quả hơn.</li>
+<li>Dễ bảo trì phần mềm: phần mềm hướng đối tượng dễ hiểu hơn, do đó dễ dàng kiểm tra, gỡ lỗi và bảo trì.</li>
+<li>Phần mềm có thể tái sử dụng: bạn không cần phải tiếp tục phát minh lại bánh xe và viết lại các chức năng tương tự cho các tình huống khác nhau. Cách nhanh nhất và an toàn nhất để phát triển một ứng dụng mới là sử dụng lại các mã hiện có các mã đã được thử nghiệm và chứng minh đầy đủ.</li>
+</ul>
+
+            <ul class="share-buttons">
+    <li>Share this article:</li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fthelifekiss.com%2fposts%2ftech%2foop-basic-part-1%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook"></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=OOP%20c%c6%a1%20b%e1%ba%a3n%20%28Ph%e1%ba%a7n%201%29&amp;url=https%3a%2f%2fthelifekiss.com%2fposts%2ftech%2foop-basic-part-1%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Tweet this article"></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fthelifekiss.com%2fposts%2ftech%2foop-basic-part-1%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google&#43;"></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fthelifekiss.com%2fposts%2ftech%2foop-basic-part-1%2f&title=OOP%20c%c6%a1%20b%e1%ba%a3n%20%28Ph%e1%ba%a7n%201%29" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title="Share on Linkedin"></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3>Comments</h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "thelifekiss-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://thelifekiss.com/img/profile-image.png" alt="Vũ Kim Thành" />
+  <p class="name">Vũ Kim Thành</p>
+  <p class="address">Hà Nội, Việt Nam</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+<li><a href="//facebook.com/thanhvk31" class="icon-facebook-squared" target="_blank" title="Facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/thanhvk" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://thelifekiss.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://thelifekiss.com/post/index.xml" title="RSS"></a>
+        <p>&copy; 2018 &middot; Powered by <a href="http://gohugo.io">Hugo</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/thelifekiss.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://thelifekiss.com/js/plugins.js"></script>
+
+
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-72465781-2', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

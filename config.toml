@@ -1,0 +1,40 @@
+baseurl = "https://thelifekiss.com/"
+languageCode = "en-us"
+title = "Invest in yourself"
+# Define how many pages appear per site
+paginate = 8
+# Enable comments powered by Disqus by entering your disqus shortname
+disqusShortname = "thelifekiss-com"
+# Enable google analytics by entering your tracking code
+googleAnalytics = "UA-72465781-2"
+theme = "hugo-minimalist-theme"
+
+[params]
+    site_author = "Vũ Kim Thành"
+    site_description = "Invest in yourself"
+    site_image = ""
+    location = "Hà Nội, Việt Nam"
+    # Link custom assets relative to /static
+    avatar = "img/profile-image.png"
+    header_background = "img/desk.jpg"
+    header_title = "Knowledge is power"
+    header_quotations = "Tôi không sợ khuyết tật trên cơ thể, cái tôi sợ là khuyết tật trong tâm hồn. Cơ thể có thể bỏ cuộc, nhưng đầu óc thì tuyệt đối không - TS. Alan Phan"
+    copyright = "Powered by [Hugo](http://gohugo.io)."
+    custom_css = []
+    custom_js  = []
+
+    # Enable gogle analytics by entering your tracking code
+    google_analytics = ""
+
+[social]
+    # Add your social network accounts to the profile section on the left
+    # by entering your username. The links to your account will be
+    # create automatically.
+    twitter   = ""
+    facebook  = "thanhvk31"
+    linkedin  = ""
+    behance   = ""
+    dribbble  = ""
+    instagram = ""
+    github    = "thanhvk"
+    gplus     = ""

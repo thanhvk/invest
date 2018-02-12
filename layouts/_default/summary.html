@@ -1,0 +1,10 @@
+<article class="post post-item">
+    <section class="image">
+        <img src="{{ .Params.image }}" alt="{{ .Params.title }}">
+    </section>
+    <section class="summarize">
+        {{ partial "article-header" . }}
+        <p>{{ printf "%s" .Description | markdownify }}&hellip;</p>
+        <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Site.Data.l10n.article.read_more }} &raquo;</a>
+    </section>    
+</article>
