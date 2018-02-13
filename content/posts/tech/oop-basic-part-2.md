@@ -3,7 +3,7 @@ date = "2018-01-30T13:50:46+02:00"
 tags = ["oop", "java"]
 title = "OOP cơ bản (Phần 2) - OOP trong Java"
 description = "Một *class* là một bản thiết kế, bản mẫu, hoặc nguyên mẫu để định nghĩa và mô tả *các thuộc tính tĩnh (static attributes)* và *các hành vi động (dynamic behavior)* chung của tất cả các đối tượng cùng loại"
-image = "/img/OOP_Objects_2.png"
+image = "/img/OOP_Objects_2.jpg"
 +++
 
 *Bài viết được dịch từ: [ntu.edu.sg](https://www.ntu.edu.sg/home/ehchua/programming/java/J3a_OOPBasics.html)*

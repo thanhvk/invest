@@ -3,7 +3,7 @@
     </a>
     <section class="summarize">
         {{ partial "article-header" . }}
-        <p>{{ printf "%s" .Description | markdownify }}</p>
+        <p>{{ printf "%s" .Description | markdownify }}&hellip;</p>
 
         <footer class="post-info"><span class="post-meta"><time datetime="{{ .Date.Format "02/01/2006" }}">{{ .Date.Format "02/01/2006" }}</time>
             {{ if isset .Params "tags" }}

@@ -31,16 +31,14 @@ Các ngôn ngữ lập trình hướng thủ tục (như C, Fortran, Cobol và P
 
 Các ngôn ngữ hướng thủ tục truyền thống tách biệt cấu trúc dữ liệu (các biến) và các thuật toán (các function).
 
-```
-Vào đầu những năm 1970, Bộ Quốc phòng Hoa Kỳ (DoD) đã giao cho một lực lượng đặc biệt nhiệm vụ điều tra lý do tại sao ngân sách CNTT của luôn luôn nằm ngoài tầm kiểm soát; nhưng không đem lại nhiều lợi ích. Kết quả điều tra là: 
+>Vào đầu những năm 1970, Bộ Quốc phòng Hoa Kỳ (DoD) đã giao cho một lực lượng đặc biệt nhiệm vụ điều tra lý do tại sao ngân sách CNTT của luôn luôn nằm ngoài tầm kiểm soát; nhưng không đem lại nhiều lợi ích. Kết quả điều tra là: 
 
-1. 80% ngân sách dành cho phần mềm (với 20% còn lại là phần cứng). 
-2. Hơn 80% ngân sách cho phần mềm đã được dùng để bảo trì (chỉ còn lại 20% cho phát triển phần mềm mới). 
-3. Các thành phần phần cứng có thể tái sử dụng cho các sản phẩm khác nhau, và không ảnh hưởng lẫn nhau. 
-4. Phần mềm hướng thủ tục thường không có khả năng chia sẻ và không thể sử dụng lại được. Các lỗi phần mềm có thể ảnh hưởng đến các chương trình khác đang chạy trên máy tính. 
+>1. 80% ngân sách dành cho phần mềm (với 20% còn lại là phần cứng). 
+>2. Hơn 80% ngân sách cho phần mềm đã được dùng để bảo trì (chỉ còn lại 20% cho phát triển phần mềm mới). 
+>3. Các thành phần phần cứng có thể tái sử dụng cho các sản phẩm khác nhau, và không ảnh hưởng lẫn nhau. 
+>4. Phần mềm hướng thủ tục thường không có khả năng chia sẻ và không thể sử dụng lại được. Các lỗi phần mềm có thể ảnh hưởng đến các chương trình khác đang chạy trên máy tính. 
 
 Đội đặc biệt đề xuất làm cho phần mềm hoạt động giống như phần cứng. DoD đã thay thế hơn 450 ngôn ngữ máy tính, được sử dụng để xây dựng các hệ thống của DoD, với một ngôn ngữ hướng đối tượng được gọi là Ada.
-```
 
 ## Các ngôn ngữ lập trình hướng đối tượng
 

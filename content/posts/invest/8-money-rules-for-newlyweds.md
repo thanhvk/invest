@@ -3,9 +3,11 @@ date = "2018-02-10T13:50:46+02:00"
 tags = ["personal finance", "newlywed"]
 title = "8 Quy tắc về tiền bạc cho những cặp vợ chồng mới cưới"
 description = "Nếu bạn mới hoặc sẽ sớm kết hôn, sẽ không còn chỉ mình bạn. Bạn đang kết hợp cuộc sống của mình với vợ/chồng của bạn - nó bao gồm tài chính"
-image = "/img/weddings-2012-06-0619-02_newlywed-questions-couple-finances_li.jpg"
+image = "/img/article-l-2015615914053350733000.jpg"
 draft = false
 +++
+
+![Newlyweb](/img/photo-1490111718993-d98654ce6cf7.jpg)
 
 *Bài viết được dịch từ: [investopedia.com](https://www.investopedia.com/advisor-network/articles/8-money-rules-newlyweds/)*
 

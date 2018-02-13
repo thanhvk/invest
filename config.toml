@@ -1,5 +1,5 @@
-#baseurl = "https://thelifekiss.com"
-baseurl = "http://localhost:1313"
+baseurl = "https://thelifekiss.com"
+#baseurl = "http://localhost:1313"
 languageCode = "en-us"
 title = "Invest in yourself"
 # Define how many pages appear per site
