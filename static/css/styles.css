@@ -467,16 +467,24 @@ a {
   text-decoration: none;
   color: #2196f3;
   transition: all 0.3s ease; }
-  a:hover {
-    color: #0c90f9; 
-    text-decoration: underline;
-  }
+a:hover {
+  color: #0c90f9; 
+  text-decoration: underline;
+}
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   color: #222; }
   h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
     text-decoration: none;
     color: #222; }
+
+blockquote {
+  background-color: #ecf3f7;
+  margin: 0;
+  padding: 0 20px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
 
 hr {
   border: 0;
@@ -599,7 +607,10 @@ hr {
 
 .post img {
   max-width: 100%;
-  height: auto; }
+  height: auto; 
+  display: block;
+  margin: 0 auto;
+}
 
 .post-info {
   color: #a2a2a2;
