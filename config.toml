@@ -1,5 +1,4 @@
 baseurl = "https://thelifekiss.com"
-#baseurl = "http://localhost:1313"
 languageCode = "en-us"
 title = "Invest in yourself"
 # Define how many pages appear per site
@@ -16,7 +15,7 @@ theme = "hugo-minimalist-theme"
     site_image = ""
     location = "Hà Nội, Việt Nam"
     # Link custom assets relative to /static
-    avatar = "img/profile-image.png"
+    avatar = "img/profile-image.jpg"
     header_background = "img/desk.jpg"
     header_title = "Knowledge is power"
     header_quotations = "Tôi không sợ khuyết tật trên cơ thể, cái tôi sợ là khuyết tật trong tâm hồn. Cơ thể có thể bỏ cuộc, nhưng đầu óc thì tuyệt đối không - TS. Alan Phan"

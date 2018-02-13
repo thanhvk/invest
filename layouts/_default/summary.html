@@ -1,5 +1,5 @@
 <article class="post post-item">
-    <a class="image" href="{{ .Permalink }}" style="background-image: url({{ .Params.image }});">
+    <a class="image" href="{{ .Permalink }}" style="background-image: url({{ .Params.image | absURL }});">
     </a>
     <section class="summarize">
         {{ partial "article-header" . }}
