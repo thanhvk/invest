@@ -1,9 +1,10 @@
 +++
-date = "2018-02-02T13:50:46+02:00"
+date = "2018-02-13T13:51:46+02:00"
 tags = ["invest101"]
-title = "Đầu tư 101: Đầu tư là gì?"
-description = "Nhà đầu tư huyền thoại Warren Buffeltt định nghĩa đầu tư là: \"...quá trình phân bổ tiền bạc ở hiện tại để nhận được nhiều hơn trong tương lai\". Mục tiêu của đầu tư là để cho tiền của bạn làm việc trong một hoặc nhiều loại hình đầu tư với hy vọng tiền của bạn sẽ tăng theo thời gian."
-draft = true
+title = "Đầu tư 101: Đầu tư là gì? (p2)"
+description = "Nhà đầu tư huyền thoại Warren Buffeltt định nghĩa đầu tư là: \"...quá trình phân bổ tiền bạc ở hiện tại để nhận được nhiều hơn trong tương lai\""
+image = "/img/invest101-02.jpg"
+draft = false
 +++
 
 *Bài viết được dịch từ: [investopedia.com](https://www.investopedia.com/university/beginner/)*

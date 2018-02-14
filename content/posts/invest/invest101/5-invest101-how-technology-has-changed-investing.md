@@ -1,9 +1,10 @@
 +++
-date = "2018-02-02T13:50:46+02:00"
+date = "2018-02-13T13:54:46+02:00"
 tags = ["invest101"]
-title = "Đầu tư 101: Công nghệ đã thay đổi việc đầu tư như thế nào?"
-description = ""
-draft = true
+title = "Đầu tư 101: Công nghệ đã thay đổi việc đầu tư như thế nào? (p5)"
+description = "Công nghệ đã tác động sâu sắc tới hầu hết khía cạnh của cuộc sống. Đầu tư chắc chắn cũng không phải ngoại lệ"
+image = "/img/invest101-05.jpg"
+draft = false
 +++
 
 *Bài viết được dịch từ: [investopedia.com](https://www.investopedia.com/university/beginner/)*

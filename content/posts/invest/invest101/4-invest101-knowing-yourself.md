@@ -1,9 +1,10 @@
 +++
-date = "2018-02-02T13:50:46+02:00"
+date = "2018-02-13T13:53:46+02:00"
 tags = ["invest101"]
-title = "Đầu tư 101: Hiểu rõ bản thân"
-description = ""
-draft = true
+title = "Đầu tư 101: Hiểu rõ bản thân (p4)"
+description = "Mỗi nhà đầu tư có những lý do đầu tư khác nhau, các mục tiêu khác nhau, thời gian và mức độ thoải mái với việc đầu tư khác nhau"
+image = "/img/invest101-04.jpg"
+draft = false
 +++
 
 *Bài viết được dịch từ: [investopedia.com](https://www.investopedia.com/university/beginner/)*

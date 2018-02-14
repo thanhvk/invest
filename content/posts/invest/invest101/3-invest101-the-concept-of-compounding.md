@@ -1,9 +1,10 @@
 +++
-date = "2018-02-02T13:50:46+02:00"
+date = "2018-02-13T13:52:46+02:00"
 tags = ["invest101"]
-title = "Đầu tư 101: Khái niệm lãi kép"
-description = "Lãi kép là quá trình tạo ra nhiều lợi nhuận hơn dựa trên việc tái đầu tư lợi nhuận thu được. Để hiệu quả, nó đòi hỏi 2 thứ: tái đầu tư lợi nhuận thu được và thời gian. Lãi kép có thể giúp số vốn đầu tư ban đầu của bạn tăng theo cấp số nhân. Nếu là một nhà đầu tư trẻ tuổi, nó là công cụ đầu tư tuyệt vời nhất, và điều quan trọng là bắt đầu sớm nhất có thể. Dưới đây là một vài ví dụ về lãi kép."
-draft = true
+title = "Đầu tư 101: Khái niệm lãi kép (p3)"
+description = "Lãi kép là quá trình tạo ra nhiều lợi nhuận hơn dựa trên việc tái đầu tư lợi nhuận thu được"
+image = "/img/invest101-03.jpg"
+draft = false
 +++
 
 *Bài viết được dịch từ: [investopedia.com](https://www.investopedia.com/university/beginner/)*
