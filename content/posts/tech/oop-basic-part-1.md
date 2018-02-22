@@ -1,7 +1,7 @@
 +++
 date = "2018-01-26T13:50:46+02:00"
 tags = ["oop", "java"]
-title = "OOP cơ bản (Phần 1)"
+title = "OOP cơ bản (p1)"
 description = "Bạn có thể \"lắp ráp\" một phần mềm bằng cách chọn một bộ phận ở đây, một bộ phận ở kia, và mong đợi chương trình chạy?"
 image = "/img/OOP_Objects_1.png"
 +++

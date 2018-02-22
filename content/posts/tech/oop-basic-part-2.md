@@ -1,7 +1,7 @@
 +++
 date = "2018-01-30T13:50:46+02:00"
 tags = ["oop", "java"]
-title = "OOP cơ bản (Phần 2) - OOP trong Java"
+title = "OOP cơ bản - OOP trong Java (p2)"
 description = "Một *class* là một bản thiết kế, bản mẫu, hoặc nguyên mẫu để định nghĩa và mô tả *các thuộc tính tĩnh (static attributes)* và *các hành vi động (dynamic behavior)* chung của tất cả các đối tượng cùng loại"
 image = "/img/OOP_Objects_2.jpg"
 +++

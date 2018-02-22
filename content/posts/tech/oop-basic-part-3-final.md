@@ -1,15 +1,16 @@
 +++
-date = "2018-02-01T13:50:46+02:00"
+date = "2018-02-13T13:59:46+02:00"
 tags = ["oop", "java"]
-title = "OOP cơ bản (Phần cuối) - OOP trong Java"
+title = "OOP cơ bản - Hàm khởi tạo (end)"
 description = ""
-draft = true
+image = "/img/OOP_Objects_3.png"
+draft = false
 +++
 
 
 ## Constructors
 
-Một nhà *Contructor* trông giống như một phương pháp đặc biệt có *cùng một tên phương thức với tên lớp*. Trong lớp Circle trên, chúng ta định nghĩa ba phiên bản quá tải của nhà xây dựng Circle(......) . Một constructor được sử dụng để *xây dựng và khởi tạo* tất cả các biến thành viên. Để xây dựng một thể hiện mới của một lớp học, bạn cần sử dụng một toán tử " new " đặc biệt, sau đó gọi đến một trong các hàm tạo. Ví dụ,
+Một hàm *Khởi tạo* (Contructor function) giống như một phương thức đặc biệt có *có tên phương thức giống với tên class*. Trong class Circle ở trên, chúng ta định nghĩa ba phiên bản của hàm khởi tạo Circle(......) . Một hàm khởi tạo được sử dụng để *xây dựng và khởi tạo* tất cả các biến thành viên. Để xây dựng một instance mới của một lớp học, bạn cần sử dụng toán tử "new", sau đó gọi một trong các hàm khởi tạo. Ví dụ,
 
 ```java
 Circle c1 = new Circle();
@@ -17,7 +18,7 @@ Circle c2 = new Circle(2.0);
 Circle c3 = new Circle(3.0, "red");
 ```
 
-Một nhà xây dựng khác với một phương pháp thông thường trong các khía cạnh sau:
+Một hàm khởi tạo khác với một phương thức thông thường ở các điểm sau:
 
 - Tên của phương thức constructor giống với tên lớp. Theo quy ước của classname, nó bắt đầu với một chữ hoa (thay vì chữ thường cho các phương pháp thông thường).
 - Constructor không có kiểu trả về. Nó hiển nhiên trở lại void . Không có câu lệnh return được cho phép bên trong thân của nhà xây dựng.
