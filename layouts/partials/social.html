@@ -1,7 +1,3 @@
-{{ with .Site.Social.twitter }}
-<li><a href="//twitter.com/{{.}}" class="icon-twitter" target="_blank" title="Twitter"></a></li>
-{{ end }}
-
 {{ with .Site.Social.facebook }}
 <li><a href="//facebook.com/{{.}}" class="icon-facebook-squared" target="_blank" title="Facebook"></a></li>
 {{ end }}
@@ -26,8 +22,12 @@
 <li><a href="//github.com/{{.}}" class="icon-github" target="_blank" title="Github"></a></li>
 {{ end }}
 
+{{ with .Site.Social.twitter }}
+<li><a href="//twitter.com/{{.}}" class="icon-twitter" target="_blank" title="Twitter"></a></li>
+{{ end }}
+
 {{ with .Site.Social.gplus }}
 <li><a href="//plus.google.com/+{{.}}" class="icon-gplus" target="_blank" title="Google+"></a></li>
 {{ end }}
 
-<li><a href="{{ .Site.BaseURL }}post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+<li><a href="{{ .Site.BaseURL }}/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
