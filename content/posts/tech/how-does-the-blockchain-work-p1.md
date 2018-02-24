@@ -1,7 +1,7 @@
 +++
 date = "2018-01-26T13:50:46+02:00"
 tags = ["blockchain", "crypto", "invest", "tech"]
-title = "Blockchain làm việc như thế nào (Phần 1)"
+title = "Blockchain làm việc như thế nào (p1)"
 description = "Nếu bạn muốn biết công nghệ blockchain là gì? nó làm việc như thế nào? và những tác động tiềm tàng của nó? mà không có bất kỳ thuật ngữ kỹ thuật nào, thì đây là bài viết dành cho bạn"
 image = "/img/how_blockchain_work_1.jpeg"
 +++

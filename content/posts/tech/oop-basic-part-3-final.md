@@ -1,8 +1,8 @@
 +++
 date = "2018-02-24T13:59:46+02:00"
 tags = ["oop", "java"]
-title = "OOP cơ bản - Phương thức khởi tạo (end)"
-description = "Một hàm *Khởi tạo* (Contructor function) là một phương thức đặc biệt *có tên giống với tên class*"
+title = "OOP cơ bản - Hàm khởi tạo (p3 - end)"
+description = "Một hàm *khởi tạo* là một phương thức đặc biệt *có tên giống với tên class*"
 image = "/img/OOP_Objects_3.png"
 draft = false
 +++
@@ -75,7 +75,7 @@ public class TestCircle {
 }
 ```
 
-Một hàm *Khởi tạo* (Contructor function) là một phương thức đặc biệt *có tên giống với tên class*. Trong class Circle ở trên, chúng ta định nghĩa ba phiên bản của phương thức khỏi tạo Circle(......) . Một phương thức khỏi tạo được sử dụng để *xây dựng* và *khởi tạo* tất cả các các biến thành viên. Để xây dựng một instance mới của một class, bạn cần sử dụng toán tử "new", sau đó gọi một trong các phương thức khỏi tạo. Ví dụ,
+Một hàm *khởi tạo* (Contructor function) là một phương thức đặc biệt *có tên giống với tên class*. Trong class Circle ở trên, chúng ta định nghĩa ba phiên bản của phương thức khỏi tạo Circle(......) . Một phương thức khỏi tạo được sử dụng để *xây dựng* và *khởi tạo* tất cả các các biến thành viên. Để xây dựng một instance mới của một class, bạn cần sử dụng toán tử "new", sau đó gọi một trong các phương thức khỏi tạo. Ví dụ,
 
 ```java
 Circle c1 = new Circle();
