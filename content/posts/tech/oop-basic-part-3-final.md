@@ -75,7 +75,7 @@ public class TestCircle {
 }
 ```
 
-Một hàm *khởi tạo* (Contructor function) là một phương thức đặc biệt *có tên giống với tên class*. Trong class Circle ở trên, chúng ta định nghĩa ba phiên bản của phương thức khỏi tạo Circle(......) . Một phương thức khỏi tạo được sử dụng để *xây dựng* và *khởi tạo* tất cả các các biến thành viên. Để xây dựng một instance mới của một class, bạn cần sử dụng toán tử "new", sau đó gọi một trong các phương thức khỏi tạo. Ví dụ,
+Một hàm *khởi tạo* (Contructor function) là một phương thức đặc biệt *có tên giống với tên class*. Trong class Circle ở trên, chúng ta định nghĩa ba phiên bản của phương thức khởi tạo Circle(......) . Một phương thức khởi tạo được sử dụng để *xây dựng* và *khởi tạo* tất cả các các biến thành viên. Để xây dựng một instance mới của một class, bạn cần sử dụng toán tử "new", sau đó gọi một trong các phương thức khởi tạo. Ví dụ,
 
 ```java
 Circle c1 = new Circle();
@@ -83,17 +83,17 @@ Circle c2 = new Circle(2.0);
 Circle c3 = new Circle(3.0, "red");
 ```
 
-Một phương thức khỏi tạo khác với một hàm thông thường ở các điểm sau:
+Một phương thức khởi tạo khác với một hàm thông thường ở các điểm sau:
 
-- Tên của phương thức khỏi tạo (constructor) giống với tên class. Theo quy ước đặt tên class, nó bắt đầu với một chữ hoa (thay vì chữ thường với các hàm thông thường).
+- Tên của phương thức khởi tạo (constructor) giống với tên class. Theo quy ước đặt tên class, nó bắt đầu với một chữ hoa (thay vì chữ thường với các hàm thông thường).
 
-- phương thức khỏi tạo không có kiểu trả về. Nó hiển nhiên trả lại void . Không có câu lệnh return trong thân của phương thức khỏi tạo.
+- phương thức khởi tạo không có kiểu trả về. Nó hiển nhiên trả lại void . Không có câu lệnh return trong thân của phương thức khởi tạo.
 
-- phương thức khỏi tạo chỉ có thể được gọi thông qua toán tử "new". Nó chỉ được sử dụng *khi* khởi tạo các instance.
+- phương thức khởi tạo chỉ có thể được gọi thông qua toán tử "new". Nó chỉ được sử dụng *khi* khởi tạo các instance.
 
-- Các phương thức khỏi tạo không được kế thừa (sẽ giải thích sau).
+- Các phương thức khởi tạo không được kế thừa (sẽ giải thích sau).
 
-**phương thức khỏi tạo mặc định (Default Constructor)**: Một phương thức khỏi tạo không có tham số được gọi là phương thức khỏi tạo mặc định . Nó khởi tạo các biến thành viên với giá trị mặc định. Ví dụ, Circle() trong ví dụ ở trên khởi tạo các biến thành viên radius và color với giá trị mặc định của chúng.
+**phương thức khởi tạo mặc định (Default Constructor)**: Một phương thức khởi tạo không có tham số được gọi là phương thức khởi tạo mặc định . Nó khởi tạo các biến thành viên với giá trị mặc định. Ví dụ, Circle() trong ví dụ ở trên khởi tạo các biến thành viên radius và color với giá trị mặc định của chúng.
 
 ## Nạp chồng phương thức (Method Overloading)
 
@@ -133,7 +133,7 @@ public class TestMethodOverloading {
 
 **Nạp chồng phương thức khởi tạo của class Circle**
 
-phương thức khỏi tạo, giống như một phương thức thông thường, cũng có thể bị nạp chồng. Class Circle phía trên có ba phiên bản của phương thức khỏi tạo theo danh sách tham số của chúng, như sau:
+phương thức khởi tạo, giống như một phương thức thông thường, cũng có thể bị nạp chồng. Class Circle phía trên có ba phiên bản của phương thức khởi tạo theo danh sách tham số của chúng, như sau:
 
 ```java
 Circle()
