@@ -16,7 +16,7 @@ Tuy nhiên, có một mô-đun mới gọi là CSS Grid và nó có nhiều kh�
 
 Điều này có vẻ gây nhầm lẫn cho các lập trình viên. Vì vậy, bài viết này sẽ so sánh hai mô-đun, cả mức độ vi mô và vĩ mô.
 
-## Một chiều vs 2 chiều
+## Một chiều vs hai chiều
 
 Nếu bạn rút ra một bài học từ bài viết này, thì đây là nó:
 
@@ -38,7 +38,7 @@ Tất nhiên bạn có thể kết hợp cả hai. Trong ví dụ ở trên, gi�
 
 ## Content-first vs layout-first
 
-Một khác biệt quan trọng nữa giữa 2 mô-đun là Flexbox tập trung vào **nội dung** trong khi Grid tập trung vào **bố cục***. Điều này có vẻ trừu tượng, vì vậy hãy xem một ví dụ cụ thể, nó sẽ dễ hiểu hơn. 
+Một khác biệt quan trọng nữa giữa 2 mô-đun là Flexbox tập trung vào **nội dung** trong khi Grid tập trung vào **bố cục**. Điều này có vẻ trừu tượng, vì vậy hãy xem một ví dụ cụ thể, nó sẽ dễ hiểu hơn. 
 
 Chúng ta sẽ sử dụng header. Đây là code HTML cho nó:
 
@@ -121,7 +121,7 @@ Dùng Chrome inspector chúng ta sẽ thấy:
 
 ![grid menu inspect 2](/img/grid-vs-flex-8.png)
 
-Chúng ta không thể chỉ đơn giản style nó với <code>margin-left: auto;</code> vì nút "logout* đã được đặt trong một ô cụ thể trong bố cục, trong cột thứ ba. Để di chuyển nó, chúng ta phải tìm một ô khác cho nó.
+Chúng ta không thể chỉ đơn giản style nó với <code>margin-left: auto;</code> vì nút "logout" đã được đặt trong một ô cụ thể trong bố cục, trong cột thứ ba. Để di chuyển nó, chúng ta phải tìm một ô khác cho nó.
 
 ## Kết hợp cả 2
 

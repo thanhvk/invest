@@ -1,8 +1,8 @@
 +++
 date = "2018-02-24T13:59:46+02:00"
 tags = ["oop", "java"]
-title = "OOP cơ bản - Hàm khởi tạo (p3 - end)"
-description = "Một hàm *khởi tạo* là một phương thức đặc biệt *có tên giống với tên class*"
+title = "OOP cơ bản - Phương thức khởi tạo (p3 - end)"
+description = "Một phương thức *khởi tạo* là một phương thức đặc biệt *có tên giống với tên class*"
 image = "/img/OOP_Objects_3.png"
 draft = false
 +++
@@ -75,7 +75,7 @@ public class TestCircle {
 }
 ```
 
-Một hàm *khởi tạo* (Contructor function) là một phương thức đặc biệt *có tên giống với tên class*. Trong class Circle ở trên, chúng ta định nghĩa ba phiên bản của phương thức khởi tạo Circle(......) . Một phương thức khởi tạo được sử dụng để *xây dựng* và *khởi tạo* tất cả các các biến thành viên. Để xây dựng một instance mới của một class, bạn cần sử dụng toán tử "new", sau đó gọi một trong các phương thức khởi tạo. Ví dụ,
+Một phương thức *khởi tạo* (Contructor function) là một phương thức đặc biệt *có tên giống với tên class*. Trong class Circle ở trên, chúng ta định nghĩa ba phiên bản của phương thức khởi tạo Circle(......) . Một phương thức khởi tạo được sử dụng để *xây dựng* và *khởi tạo* tất cả các các biến thành viên. Để xây dựng một instance mới của một class, bạn cần sử dụng toán tử "new", sau đó gọi một trong các phương thức khởi tạo. Ví dụ,
 
 ```java
 Circle c1 = new Circle();
@@ -83,10 +83,10 @@ Circle c2 = new Circle(2.0);
 Circle c3 = new Circle(3.0, "red");
 ```
 
-Một phương thức khởi tạo khác với một hàm thông thường ở các điểm sau:
+Một phương thức khởi tạo khác với một phương thức thông thường ở các điểm sau:
 
 - Tên của phương thức khởi tạo (constructor) giống với tên class. Theo quy ước đặt tên class, nó bắt đầu với một chữ hoa (thay vì chữ thường với các hàm thông thường).
-
+t
 - phương thức khởi tạo không có kiểu trả về. Nó hiển nhiên trả lại void . Không có câu lệnh return trong thân của phương thức khởi tạo.
 
 - phương thức khởi tạo chỉ có thể được gọi thông qua toán tử "new". Nó chỉ được sử dụng *khi* khởi tạo các instance.
@@ -97,7 +97,7 @@ Một phương thức khởi tạo khác với một hàm thông thường ở c
 
 ## Nạp chồng phương thức (Method Overloading)
 
-Nạp chồng phương thức có nghĩa là *cùng một tên phương thức* có thể có *các cách triển khai (phiên bản) khác nhau*. Tuy nhiên, các cách triển khai khác nhau phải được phân biệt bằng danh sách các tham số của chúng (có thể là số lượng các tham số, hoặc kiểu của các thâm số, hoặc thứ tự của chúng).
+Nạp chồng phương thức có nghĩa là *cùng một tên phương thức* có thể có *các cách triển khai (phiên bản) khác nhau*. Tuy nhiên, các cách triển khai khác nhau phải được phân biệt bằng danh sách các tham số của chúng (có thể là số lượng các tham số, hoặc kiểu của các tham số, hoặc thứ tự của chúng).
 
 **Ví dụ**: Phương thức average() có 3 phiên bản, với các danh sách tham số khác nhau. Người gọi có thể gọi phiên bản đã chọn bằng cách cung cấp các tham số phù hợp.
 
@@ -133,7 +133,7 @@ public class TestMethodOverloading {
 
 **Nạp chồng phương thức khởi tạo của class Circle**
 
-phương thức khởi tạo, giống như một phương thức thông thường, cũng có thể bị nạp chồng. Class Circle phía trên có ba phiên bản của phương thức khởi tạo theo danh sách tham số của chúng, như sau:
+Phương thức khởi tạo, giống như một phương thức thông thường, cũng có thể bị nạp chồng. Class Circle phía trên có ba phiên bản của phương thức khởi tạo theo danh sách tham số của chúng, như sau:
 
 ```java
 Circle()

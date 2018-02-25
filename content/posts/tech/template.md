@@ -4,7 +4,8 @@ tags = []
 title = ""
 description = ""
 keywords = ""
-image = ""
+image = "/img/"
 draft = true
 +++
 
+*Bài viết được dịch từ: []()*
