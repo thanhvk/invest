@@ -64,7 +64,7 @@ Trong ví dụ trên, một loạt hình ảnh được sắp xếp trong một 
 
 Hiện tại nó vẫn ở trạng thái [nháp](https://drafts.csswg.org/css-scroll-snap/), hãy đọc để biết thêm thông tin về chức năng mới thú vị này.
 
-## Inline CSS trong <body>
+## Inline CSS trong &lt;body&gt;
 
 HTML 5.2 spec cho phép tạo style inline CSS trong body như một cách hợp lệ. Không phải là tính năng mới thú vị nhất, nhưng điều này có thể thực sự hữu ích trong một số trường hợp.
 
