@@ -1,6 +1,6 @@
 +++
-date = "2018-01-26T13:50:46+02:00"
-tags = ["tech", "trend"]
+date = "2018-02-26T13:50:46+02:00"
+tags = ["tech", "trend", "blockchain"]
 title = "5 Xu hướng công nghệ để học trong năm 2018 nếu muốn có một sự nghiệp thành công"
 description = "Nếu bạn đang tìm kiếm một nghề nghiệp mới trong thế giới công nghệ và bạn có đủ tham vọng để học, một trong 5 sự lựa chọn nghề nghiệp này là những xu hướng tôi khuyên bạn nên tập trung vào"
 image = "/img/1_m3vlxneAo50hBQYOZbT_ug.jpeg"
@@ -30,7 +30,7 @@ Những tiêu chí để lựa chọn là:
 
 Đây là chủ đề hot của năm. Có nhiều người đã kiếm được rất nhiều tiền bằng cách đầu tư vào tiền kỹ thuật số, và cũng có rất nhiều người đã mất tiền. Tuy nhiên, thị trường này còn khá trẻ và có tiềm năng tạo ra lợi nhuận thực sự cao trên khoản đầu tư của bạn, nếu như bạn có một vài kiến thức về kỹ thuật và chịu khó theo dõi tin tức thị trường hàng ngày. Mặc dù có nhiều dự án lừa đảo ngoài kia, nhưng công nghệ là có thật và có những bộ óc hàng đầu đang làm việc trong lĩnh vực này.
 
-Điều này cực kỳ rủi ro, và cá nhân tôi không muốn trở thành một nhà đầu tư tiền kỹ thuật số toàn thời gian. Tuy nhiên, nếu bạn sẵn sàng chấp nhận rủi ro cao, đây là những thứ bạn cần làm:
+Lĩnh vực này cực kỳ rủi ro, và cá nhân tôi không muốn trở thành một nhà đầu tư tiền kỹ thuật số toàn thời gian. Tuy nhiên, nếu bạn sẵn sàng chấp nhận rủi ro cao, đây là những thứ bạn cần làm:
 
 1. Đọc [Các tài sản kỹ thuật số](https://www.amazon.com/Cryptoassets-Innovative-Investors-Bitcoin-Beyond/dp/1260026671)
 2. Đọc [Sách trắng Bitcoin](https://bitcoin.org/bitcoin.pdf)
