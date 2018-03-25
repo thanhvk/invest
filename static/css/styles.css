@@ -483,6 +483,14 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     text-decoration: none;
     color: #222; }
 
+figcaption {
+  font-family: "Roboto", serif;
+  text-align: center;
+  font-size: 14px;
+  color: #7c7c7c;
+  margin-top: -10px;
+}
+
 blockquote {
   background-color: #ecf3f7;
   margin: 0;
