@@ -7,9 +7,10 @@
         <title>{{ if isset .Params "title" }} {{ .Params.Title }} {{ else }} {{ .Site.Title }} {{ end }}</title>
         <meta property="og:title" content="{{ if isset .Params "title" }}{{ .Params.Title }}{{ else }}{{ .Site.Title }}{{ end }}">
         <meta property="og:author" content="{{ .Site.Params.site_author }}">
-        <meta property="og:description" content="{{ if isset .Params "description" }}{{ .Params.description }}{{ else }}{{ .Site.Params.site_description }}{{ end }}">
+        <meta name="description" property="og:description" content="{{ if isset .Params "description" }}{{ .Params.description }}{{ else }}{{ .Site.Params.site_description }}{{ end }}">
         <meta property="og:image" content="{{ if isset .Params "image" }}{{ .Params.image | absURL }}{{ else }}{{ .Site.Params.site_image | absURL }}{{ end }}">
         <meta property="og:viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="{{ if isset .Params "keywords" }}{{ .Params.Keywords }}{{ else }}{{ .Site.Params.Keywords }}{{ end }}">
         {{ .Hugo.Generator }}
         <link href="{{ "post/index.xml" | absURL }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
         <link href="{{ "post/index.xml" | absURL }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
