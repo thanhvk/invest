@@ -4,11 +4,13 @@ tags = ["css"]
 title = "Làm thế nào để thành thạo CSS Grid trong nháy mắt - p1"
 description = "Trong bốn phần của bài viết này, tôi sẽ chỉ cho bạn 20% cần thiết để làm được 80% những gì bạn có thể làm với CSS Grid layout."
 keywords = "CSS Grid, CSS Flexbox"
-image = "/img/master-css-grid.png"
+image = "/img/master-css-grid-layout.gif"
 draft = false
 +++
 
 *Bài viết được dịch từ: [medium.com](https://medium.com/flexbox-and-grids/how-to-efficiently-master-the-css-grid-in-a-jiffy-585d0c213577)*
+
+![](/img/master-css-grid.png)
 
 ## Giới thiệu
 
@@ -46,7 +48,7 @@ Xử lý các bố cục trong CSS được coi là một công việc khó khă
 
 ## Cái chúng ta sẽ xây dựng
 
-Chúng ta sẽ học cách áp dụng 20% kiến thức học được để xây dựng bố cục responsive của một ứng dụng âm nhạc
+Chúng ta sẽ học cách áp dụng 20% kiến thức học được để xây dựng bố cục responsive của một ứng dụng âm nhạc:
 
 ![](https://cdn-images-1.medium.com/max/900/1*ripUP4LuXPQ851Zlq79bWQ.gif)
 
@@ -96,7 +98,7 @@ Một grid track có thể xem như một tên gọi khác cho các cột và c�
 
 Hình dưới đây là ví dụ về grid tracks
 
-![](https://cdn-images-1.medium.com/max/360/1*-tby4L7UaQavuy6uc0H1LQ.png)
+![](/img/master-css-grid-grid-tracks.png)
 
 ## Phần 2: 10% còn lại mà bạn cần biết về CSS grid
 
