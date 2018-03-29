@@ -1,6 +1,6 @@
 baseurl = "https://thelifekiss.com"
 languageCode = "en-us"
-title = "Invest in yourself"
+title = "Knowledge is power"
 # Define how many pages appear per site
 paginate = 8
 # Enable comments powered by Disqus by entering your disqus shortname
@@ -11,7 +11,7 @@ theme = "hugo-minimalist-theme"
 
 [params]
     site_author = "Vũ Kim Thành"
-    site_description = "Invest in yourself"
+    site_description = "Knowledge is power"
     site_image = ""
     location = "Hà Nội, Việt Nam"
     # Link custom assets relative to /static
