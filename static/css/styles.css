@@ -845,7 +845,8 @@ body.post-template .site-header h2 .logo {
     grid-column-gap: 20px;
   }
   
-  .post-list .pagination {
+  .post-list .pagination,
+  .post-list .home {
     grid-column: 1 / 3
   }
 }
