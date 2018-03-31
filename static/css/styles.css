@@ -888,13 +888,14 @@ body.post-template .site-header h2 .logo {
     height: 180px;
   }
   .site-header h2 {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 300;
     background-size: 90px 74px; 
   }
 
   .site-header p {
     width: 80%;
+    font-size: 14px;
   }
 } 
 
