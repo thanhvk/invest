@@ -1,6 +1,6 @@
 +++
 date = "2018-03-26T13:59:46+02:00"
-tags = ["css"]
+tags = ["css grid"]
 title = "Làm thế nào để thành thạo CSS Grid trong nháy mắt - p2"
 description = "Chúng ta sẽ học cách áp dụng 20% kiến thức học được để xây dựng bố cục responsive của một ứng dụng âm nhạc"
 image = "/img/master-css-grid-app-music.gif"

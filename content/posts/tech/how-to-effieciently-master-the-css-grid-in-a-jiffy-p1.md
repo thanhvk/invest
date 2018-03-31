@@ -1,8 +1,8 @@
 +++
 date = "2018-03-24T13:59:46+02:00"
-tags = ["css"]
+tags = ["css grid"]
 title = "Làm thế nào để thành thạo CSS Grid trong nháy mắt - p1"
-description = "Trong bốn phần của bài viết này, tôi sẽ chỉ cho bạn 20% cần thiết để làm được 80% những gì bạn có thể làm với CSS Grid layout."
+description = "Tôi sẽ chỉ cho bạn 20% cần thiết để làm được 80% những gì bạn có thể làm với CSS Grid layout."
 keywords = "CSS Grid, CSS Flexbox"
 image = "/img/master-css-grid-layout.gif"
 draft = false

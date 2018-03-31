@@ -2,7 +2,7 @@
 date = "2018-03-29T13:50:46+02:00"
 tags = ["blockchain", "crypto", "invest", "tech"]
 title = "Blockchain làm việc như thế nào (p2)"
-description = "Công nghệ Blockchain dường như khá phổ biến. Nhưng chính xác thì Blockchain là gì? Cụ thể hơn, đâu là những yếu tố mà bạn thực sự cần biết về blockchain?"
+description = "Chính xác thì Blockchain là gì? Cụ thể hơn, đâu là những yếu tố mà bạn thực sự cần biết về blockchain?"
 image = "/img/how_blockchain_work_2.jpeg"
 +++
 
@@ -130,13 +130,11 @@ Nếu một người kiểm tra chứng thực một giao dich cái mà các tr�
 ## Kết luận
 Bây giờ bạn đã hiểu những nhân tố cơ bản của công nghệ Blockchain, bạn có thể phân biệt dễ dàng:
 
-**
-1. Blockchain là gì?
-2. Bitcoin làm việc như thế nào?
-3. Đâu là những đổi mới chính của Ethereum?
-4. Hợp đồng thông minh là gì?
-5. Sự khác nhau giữa các kiểu cơ chế đồng thuận trong blockchain?
-**
+1. **Blockchain là gì?
+2. **Bitcoin làm việc như thế nào?
+3. **Đâu là những đổi mới chính của Ethereum?
+4. **Hợp đồng thông minh là gì?
+5. **Sự khác nhau giữa các kiểu cơ chế đồng thuận trong blockchain?
 
 
 
