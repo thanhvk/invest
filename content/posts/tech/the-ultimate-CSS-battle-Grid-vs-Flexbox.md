@@ -1,7 +1,7 @@
 +++
 date = "2018-02-24T13:59:46+02:00"
 tags = ["web"]
-title = "Kết quả cuối cùng trận đấu: Grid vs Flexbox"
+title = "Kết quả cuối cùng trận đấu: CSS Grid vs Flexbox"
 description = "Chúng khác nhau như thế nào? và khi nào thì nên sử dụng cái này mà không phải cái kia?"
 keywords = ""
 image = "/img/grid-vs-flex-1.jpg"

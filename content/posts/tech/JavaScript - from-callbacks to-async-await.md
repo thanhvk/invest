@@ -1,21 +1,21 @@
 +++
-date = "2018-03-15T13:59:46+02:00"
+date = "2018-04-01T13:59:46+02:00"
 tags = ["javascript"]
 title = "JavaScript: từ callbacks tới async/await"
-description = ""
+description = "Làm thế nào tôi biến code bất đồng bộ thành đồng bộ?. Hi vọng rằng tôi sẽ cho bạn thấy câu trả lời"
 keywords = ""
 image = "/img/javascript-from-callbacks-to-async-await-1cc090ddad99.jpg"
-draft = true
+draft = false
 +++
 
 *Bài viết được dịch từ: [medium.freecodecamp.org](https://medium.freecodecamp.org/javascript-from-callbacks-to-async-await-1cc090ddad99)*
 
 ![javascript-from-callbacks-to-async-await-1cc090ddad992](/img/javascript-from-callbacks-to-async-await-1cc090ddad992.jpeg)
-<caption>[Thomas Kelley](https://unsplash.com/@thkelley)</caption>
+<figcaption>[Thomas Kelley](https://unsplash.com/@thkelley)</figcaption>
 
-JavaScript là đồng bộ. Điều này có nghĩa là nó sẽ thực thi mã lệnh của bạn theo thứ tự sau khi [hoiting](https://scotch.io/tutorials/understanding-hoisting-in-javascript). Trước khi mã thực thi, các khai báo <code>var</code> và <code>function</code> được "hoisted" lên phía trên cùng của phạm vi của chúng. 
+JavaScript là đồng bộ. Điều này có nghĩa là nó sẽ thực thi code của bạn theo thứ tự sau khi [hoiting](https://scotch.io/tutorials/understanding-hoisting-in-javascript). Trước khi code thực thi, các khai báo <code>var</code> và <code>function</code> được "đẩy" lên phía trên cùng scope (phạm vi) của chúng. 
 
-Đây là ví dụ về mã đồng bộ:
+Đây là ví dụ về code đồng bộ:
 
 ```javascript
 console.log('1')
@@ -23,11 +23,11 @@ console.log('2')
 console.log('3')
 ```
 
-Mã này chắc chắn sẽ ghi lại "1 2 3". 
+Đoạn code này chắc này chắc chắn sẽ in ra "1 2 3". 
 
-Các yêu cầu không đồng bộ sẽ đợi một bộ đếm thời gian kết thúc hoặc một yêu cầu để đáp ứng trong khi phần còn lại của mã tiếp tục thực hiện. Sau đó, khi thời gian đúng thì [callback](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function) sẽ đưa ra các yêu cầu không đồng bộ này vào hành động. 
+Các request bất đồng bộ sẽ chờ timer kết thúc (setTimeout) hoặc request được đáp trả, trong khi phần còn lại của code tiếp tục được thực thi. Sau đó, khi đến thời điểm [callback](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function) sẽ đưa các request bất đồng bộ vào hoạt động. 
 
-Đây là một ví dụ về một mã không đồng bộ:
+Đây là một ví dụ về code bất đồng bộ:
 
 ```javascript
 console.log('1')
@@ -39,21 +39,18 @@ setTimeout(function afterTwoSeconds() {
 console.log('3')
 ```
 
-Điều này thực sự sẽ đăng nhập "1 3 2", vì "2" là trên một <code>setTimeout</code> mà sẽ chỉ thực hiện, bằng ví dụ này, sau hai giây. Ứng dụng của bạn không treo chờ hai giây để kết thúc. Thay vào đó, nó sẽ tiếp tục thực hiện phần còn lại của mã và khi thời gian chờ kết thúc, nó sẽ trở lại sauTwoSeconds. 
+Đoạn code trên sẽ in ra "1 3 2", trong đó "2" ở trong hàm <code>setTimeout</code>, cái sẽ chỉ thực thi sau 2 giây. Ứng dụng của bạn sẽ không chờ cho đến khi 2 giây kết thúc. Thay vào đó nó sẽ tiếp tục thực thi phần còn lại của code và khi timeout kết thúc nó sẽ quay trở lại để thực thi hàm <code>afterTwoSeconds</code>.
 
-Bạn có thể hỏi "Tại sao lại hữu ích?" Hoặc "Làm thế nào để tôi nhận mã async của tôi để trở thành đồng bộ?". Hy vọng rằng tôi có thể cho bạn thấy những câu trả lời.
+Bạn có thể hỏi "Tại sao điều này lại hữu ích?" hay "Làm thế nào tôi biến code bất đồng bộ (async) thành đồng bộ (sync)?". Hi vọng rằng tôi sẽ cho bạn thấy câu trả lời.
 
 ## Vấn đề
-
-Hãy nói mục tiêu của chúng tôi là tìm kiếm một người dùng GitHub và nhận được tất cả các kho của người dùng đó. Điều là chúng ta không biết tên chính xác của người dùng. Vì vậy, chúng ta phải liệt kê tất cả người dùng có tên tương tự và các kho của họ. 
-
-Không cần phải siêu ưa thích, một cái gì đó như thế này
+Mục tiêu của chúng ta là tìm kiếm một người dùng GitHub và lấy tất cả các repo (kho) của người đó. Và bởi vì chúng ta không biết chính xác tên người dùng. Vì thế chúng ta liệt kê tất cả người dùng có tên tương tự nhau và các repo tương ứng. Như thế này:
 
 ![javascript-from-callbacks-to-async-await-1cc090ddad993](/img/javascript-from-callbacks-to-async-await-1cc090ddad993.png)
 
-Trong những ví dụ này, mã yêu cầu sẽ sử dụng XHR ([XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)). Bạn có thể thay thế nó bằng jQuery <code>$.ajax</code> hoặc gần đây hơn được gọi là phương pháp tiếp cận được gọi là <code>fetch</code>. Cả hai sẽ cho bạn những lời hứa hẹn tiếp cận ra khỏi cổng. 
+Trong những ví dụ này, chúng ta sẽ sử dụng XHR ([XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)). Bạn có thể thay thế nó với jQuery <code>$.ajax</code> hoặc một hướng tiếp cập tự nhiên hơn gọi là <code>fetch</code>. Tất cả sẽ cho bạn các promise ở đầu ra.
 
-Nó sẽ được thay đổi một chút tùy thuộc vào cách tiếp cận của bạn nhưng như là một starter:
+Đoạn code dưới đây sẽ thay đổi một chút phụ thuộc và hướng tiếp cận của bạn, nhưng bắt đầu sẽ như thế này:
 
 ```javascript
 // url argument can be something like 'https://api.github.com/users/daspinola/repos'
@@ -78,34 +75,33 @@ function request(url) {
 }
 ```
 
-Hãy nhớ rằng trong những ví dụ này phần quan trọng không phải là kết quả cuối cùng của mã. Thay vào đó, mục tiêu của bạn cần phải hiểu được sự khác biệt của cách tiếp cận và cách bạn có thể tận dụng chúng để phát triển.
+Hãy nhớ rằng, trong những ví dụ này phần quan trọng không phải là kết quả cuối cùng của code. Thay vào đó, mục tiêu của bạn là phải hiểu được sự khác biệt của các cách tiếp cận và cách bạn có thể tận dụng chúng cho công việc của mình.
 
 ## Callback
-
-Bạn có thể lưu một tham chiếu của một hàm trong một biến khi sử dụng JavaScript. Sau đó, bạn có thể sử dụng chúng như các đối số của một hàm khác để thực thi sau đó. Đây là "callback" của chúng tôi. 
+Bạn có thể lưu một hàm trong một biến khi sử dụng JavaScript. Sau đó, sử dụng chúng như các tham số của một hàm khác để thực thi sau đó. Đây chính là "callback". 
 
 Một ví dụ sẽ là:
 
 ```javascript
-// Execute the function "doThis" with another function as parameter, in this case "andThenThis". doThis will execute whatever code it has and when it finishes it should have "andThenThis" being executed.
+// Thực thi hàm "doThis" với tham số là một hàm khác, trong trường hợp này là "andThenThis". doThis sẽ thực thi ở bất kỳ đau trong code và khi nó kết thúc hàm "andThenThis" sẽ được thực thi.
 
 doThis(andThenThis)
 
-// Inside of "doThis" it's referenced as "callback" which is just a variable that is holding the reference to this function
+// Bên trong "doThis" nó được tham chiếu như "callback", cái chỉ là một biến lưu giữ tham chiếu tới hàm này.
+
 function andThenThis() {
   console.log('and then this')
 }
 
-// You can name it whatever you want, "callback" is common approach
+// Bạn có thể sử dụng bất cứ tên nào bạn muốn, nhưng "callback" được sử dụng phổ biến nhất.
+
 function doThis(callback) {
-  console.log('this first')
-  
-  // the '()' is when you are telling your code to execute the function reference else it will just log the reference
+  console.log('this first');
   callback()
 }
 ```
 
-Sử dụng <code>callback</code> để giải quyết vấn đề của chúng tôi cho phép chúng tôi làm một cái gì đó như thế này với function <code>request</code> mà chúng tôi đã xác định trước đó:
+Sử dụng <code>callback</code> cho phép chúng ta làm một số thứ với hàm <code>request</code> đã định nghĩa trước đó:
 
 ```javascript
 function request(url, callback) {
@@ -128,7 +124,7 @@ function request(url, callback) {
 }
 ```
 
-Chức năng của chúng tôi cho yêu cầu sẽ chấp nhận <code>callback</code> để khi <code>request</code> được thực hiện, nó sẽ được gọi trong trường hợp có lỗi và trong trường hợp thành công.
+Hàm request sẽ có thêm một tham số <code>callback</code>, và khi một <code>request</code> được tạo nó sẽ được gọi trong cả 2 trường hợp lỗi hoặc thành công.
 
 ```javascript
 const userGet = `https://api.github.com/search/users?page=1&q=daspinola&type=Users`
@@ -144,21 +140,17 @@ request(userGet, function handleUsersList(error, users) {
 })
 ```
 
-Giải quyết vấn đề này: 
+Phân tích:
 
-- Chúng tôi yêu cầu lấy kho của người dùng 
+- Chúng tạo một request để lấy danh sách người dùng
+- Sau khi request hoàn thành chúng ta sử dụng hàm callback <code>handleUserList</code>
+- Nếu không có lỗi chúng ta sẽ phân tích kết quả trả về từ server sử dụng <code>JSON.parse</code>
+- Sau đó lặp qua danh sách người dùng khi nó lớn hơn 1. Với mỗi người dùng chúng ta yêu cầu danh sách các repo của họ. Chúng ta sẽ sử dụng url là giá trị của <code>repos_url</code> trong mỗi đối tượng <code>user</code>. 
+- Khi request hoàn thành callback sẽ được gọi. Nó sẽ xử lý lỗi hoặc kết quả trả về là danh sách các repo.
 
-- Sau khi yêu cầu hoàn tất chúng tôi sử dụng <code>handleUsersList</code> callback
+**Lưu ý**: Sử dụng <code>err</code> như là tham số đầu tiên của callback là một quy ước khá phổ biến, đặc biệt khi sử dụng Node.js.
 
-- Nếu không có lỗi thì chúng ta sẽ phân tích phản hồi của máy chủ của chúng ta thành một đối tượng sử dụng <code>JSON.parse</code> 
-
-- Sau đó chúng tôi lặp lại danh sách người dùng của chúng tôi vì nó có thể có nhiều hơn một Đối với mỗi người dùng chúng tôi yêu cầu danh sách kho của họ. Chúng tôi sẽ sử dụng url trả lại cho mỗi người dùng trong phản hồi đầu tiên của chúng tôi Chúng tôi gọi <code>repos_urlas url</code> cho các yêu cầu tiếp theo của chúng tôi hoặc từ lần phản hồi đầu tiên 
-
-- Khi yêu cầu hoàn thành gọi lại, chúng tôi sẽ gọi Điều này sẽ xử lý lỗi của nó hoặc phản hồi với danh sách các kho cho người dùng đó
-
-**Lưu ý**: Gửi lỗi đầu tiên là thông số là một thực tế phổ biến đặc biệt là khi sử dụng Node.js.
-
-Something like this:
+Một hướng tiếp cần "hoàn chỉnh" và dễ đọc hơn sẽ có một vài hàm xử lý lỗi. Chúng ta cũng tách callback ra khỏi hàm request. Giống như thế này:
 
 ```javascript
 try {
@@ -166,33 +158,35 @@ try {
 } catch (e) {
   console.error('Request boom! ', e)
 }
+
 function handleUsersList(error, users) {
   if (error) throw error
   const list = JSON.parse(users).items
+
   list.forEach(function(user) {
     request(user.repos_url, handleReposList)
   })
 }
+
 function handleReposList(err, repos) {
   if (err) throw err
   
-  // Handle the repositories list here
+  // Xử lý danh sách repo ở đây
   console.log('My very few repos', repos)
 }
 ```
 
-Điều này kết thúc lên có vấn đề như đua và các vấn đề xử lý lỗi. Đua xe sẽ xảy ra khi bạn không kiểm soát người dùng nào sẽ nhận được đầu tiên. Chúng tôi yêu cầu thông tin cho tất cả trong trường hợp có nhiều hơn một. Chúng tôi không xem xét đơn đặt hàng. Ví dụ: người dùng 10 có thể đến đầu tiên và người dùng cuối cùng 2. Chúng ta có một giải pháp khả thi sau trong bài báo. 
+Đoạn code này có vấn đề là bạn không thể điều khiển thứ tự nhận danh sách repo của người dùng. Chúng ta đang yêu cầu thông tin cho tất cả người dùng trong trường hợp có nhiều hơn 1. Và không thể quyết định được thứ tự sẽ nhận. Ví dụ, danh sách repo của người dùng thứ 10 có thể nhận được đầu tiên và người dùng thứ 2 thì nhận được cuối cùng. Có một giải pháp khả thi cho vấn đề này sẽ được đề cập ở phần sau.
 
-Vấn đề chính với callbacks là bảo trì và dễ đọc có thể trở thành một nỗi đau. Nó đã được sắp xếp và mã không khó. Đây được gọi là **callback hell** mà có thể tránh được với cách tiếp cận tiếp theo của chúng tôi.
+Vấn đề chính với callbacks là việc bảo trì và tính dễ đọc. Đây được gọi là **callback hell**, cái có thể tránh được với cách tiếp cận ở phần tiếp theo.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*3cMX1FwfBO6W5VnVcvxaWw.png)
-Hình ảnh chụp từ [đây](https://medium.com/@sagish/node-with-benefits-using-coffeescript-in-your-stack-e9754bf58668)
+<figcaption>Hình ảnh lấy từ [đây](https://medium.com/@sagish/node-with-benefits-using-coffeescript-in-your-stack-e9754bf58668)</figcaption>
 
 ## Promies
+Promises có thể làm cho code của bạn dễ đọc hơn. Một lập trình viên mới có thể xem code base và thấy rõ thứ tự thực thi của code.
 
-Hứa hẹn bạn có thể làm cho mã của bạn dễ đọc hơn. Nhà phát triển mới có thể đến cơ sở mã và xem trình tự thực hiện rõ ràng đối với mã của bạn. 
-
-Để tạo ra một lời hứa bạn có thể sử dụng:
+Để tạo một promise bạn có thể sử dụng:
 
 ```javascript
 const myPromise = new Promise(function(resolve, reject) {
@@ -205,6 +199,7 @@ const myPromise = new Promise(function(resolve, reject) {
     reject('error')
   }
 })
+
 myPromise
   .then(function whenOk(response) {
     console.log(response)
@@ -215,33 +210,27 @@ myPromise
   })
 ```
 
-Hãy để chúng tôi phân hủy nó: 
+Hãy phân tích đoạn code trên:
 
-- Một promise được khởi tạo với một <code>function</code> <code>resolve</code> và <code>rejects</code> các câu lệnh 
-
-- Đặt mã async của bạn bên trong hàm <code>resolve</code> của <code>Promise</code> khi mọi thứ xảy ra như mong muốn, ngược lại là <code>reject</code>
-
-- Khi một <code>resolve</code> được tìm thấy phương thức <code>.then</code> sẽ thực thi cho rằng Promise. Khi một <code>reject</code> được tìm thấy <code>.catch</code> sẽ được kích hoạt
+- Một promise được khởi tạo với hàm với 2 tham số <code>resolve</code> và <code>reject</code>
+- Đặt code bất đồng bộ bên trong hàm <code>Promise</code>. Gọi hàm <code>resolve</code> khi mọi thứ hoạt động như mong muốn. Ngược lại gọi <code>reject</code>
+- Khi một <code>resolve</code> được tìm thấy phương thức <code>.then</code> được thực thi. Khi một <code>reject</code> được tìm thấy <code>.catch</code> được kích hoạt.
 
 Những điều cần ghi nhớ:
 
-- <code>resolve</code> và <code>reject</code> chỉ chấp nhận một tham số <code>resolve('yey', 'works')</code> sẽ chỉ gửi 'yey' đến hàm callback <code>.then</code>
+- <code>resolve</code> và <code>reject</code> chỉ chấp nhận một tham số. <code>resolve('yey', 'works')</code> sẽ chỉ gửi 'yey' tới <code>.then</code>
+- Nếu nối chuỗi nhiều <code>.then</code>. Bạn nên thêm một <code>return</code> tại cuối mỗi callback tương ứng với chúng.
+- Khi một <code>reject</code> xảy ra <code>catch</code> sẽ được thực thi, nếu bạn có một <code>.then</code> đã được nối đằng sau <code>catch</code>. Nó sẽ vẫn thực thi <code>.then</code> đó.
+- Với một chuỗi <code>.then</code> nếu lỗi xảy ra trên hàm đầu tiên. Nó sẽ bỏ qua chuỗi <code>.then</code> đằng sau cho đến khi tìm thấy một <code>.catch</code>
+- Một promise có 3 trạng thái
+  - **pending** khi nó đang chờ <code>resolve</code> hoặc <code>reject</code> xảy ra
+  - **resolved**
+  - **rejected**
+- Khi trong trạng thái <code>resolved</code> hoặc <code>rejected</code>. Nó không thể thay đổi.
 
-- Nếu bạn chuỗi nhiều <code>.then</code> Bạn nên luôn luôn thêm một <code>return</code> vào cuối callbacks tương ứng của họ. Khác họ sẽ thực hiện cùng một lúc
+**Lưu ý:** Bạn có thể tạo ra các promise mà không cần thực thi ngay tại thời điểm khai báo.  
 
-- Khi một từ <code>reject</code> bắt nếu bạn có một chuỗi <code>.then</code> tới i. Nó vẫn sẽ thực <code>.then</code> đó. Bạn có thể xem <code>.then</code> như là một "luôn luôn thực hiện"
-
-- Với một chuỗi trên <code>.then</code> đó nếu một lỗi xảy ra trên một trong những đầu tiên Nó sẽ bỏ qua <code>.then</code> cho đến khi nó tìm thấy một <code>.catch</code>
-
-- Khi chờ đợi <code>resolve</code> hoặc <code>reject</code> xảy ra **resolved**, **rejected**
-
-- Một khi nó ở trong trạng thái được <code>resolved</code> hoặc <code>rejected</code>. Nó không thể thay đổi
-
-**Lưu ý**: Bạn có thể tạo ra các promise mà không có chức năng tại thời điểm khai báo. Cách mà tôi chỉ ra nó chỉ là một cách phổ biến để làm điều đó.
-
-"Lý thuyết, lý thuyết, lý thuyết ... Tôi bối rối" bạn có thể nói. 
-
-Hãy sử dụng ví dụ yêu cầu của chúng tôi với một lời hứa để làm rõ mọi việc:
+Hãy sử dụng ví dụ request với một promise để minh họa
 
 ```javascript
 function request(url) {
@@ -266,17 +255,22 @@ function request(url) {
 }
 ```
 
-Trong trường hợp này khi bạn thực hiện <code>request</code> nó sẽ trả về một cái gì đó như thế này:
+Trong trường hợp này khi bạn thực thi <code>request</code> nó sẽ trả về như thế này:
 
 ![](https://cdn-images-1.medium.com/max/1600/1*whumsNXyynNP7n4WZLZTZg.png)
+<figcaption>Một promise đang chờ resolved hoặc rejected</figcaption>
 
 ```javascript
 const userGet = `https://api.github.com/search/users?page=1&q=daspinola&type=Users`
+
 const myPromise = request(userGet)
+
 console.log('will be pending when logged', myPromise)
+
 myPromise
   .then(function handleUsersList(users) {
     console.log('when resolve is found it comes here with the response, in this case users ', users)
+
     const list = JSON.parse(users).items
     return Promise.all(list.map(function(user) {
       return request(user.repos_url)
@@ -290,50 +284,253 @@ myPromise
   })
 ```
 
-Đây là cách chúng tôi giải quyết đua xe và một số vấn đề xử lý lỗi. Mã vẫn còn hơi phức tạp. Nhưng nó là một cách để cho bạn thấy rằng cách tiếp cận này cũng có thể tạo ra các vấn đề dễ đọc. 
+Đây là cách chúng ta xử lý thứ tự kết quả trả về và một vài vấn đề xử lý lỗi. Code vẫn còn hơi phức tạp. Nhưng đó là một cách để cho bạn thấy rằng cách tiếp cận này cũng có thể tạo ra các vấn đề gây khó đọc. 
 
-Một sửa chữa nhanh chóng sẽ được tách riêng callbacks như sau:
+Chúng ta có thể sửa nhanh để tách các callback ra như thế này:
 
 ```javascript
 const userGet = `https://api.github.com/search/users?page=1&q=daspinola&type=Users`
+
 const userRequest = request(userGet)
-// Just by reading this part out loud you have a good idea of what the code does
+
+// Chỉ cần đọc phần này bạn sẽ hiểu đoạn code này đang làm gì
 userRequest
   .then(handleUsersList)
   .then(repoRequest)
   .then(handleReposList)
   .catch(handleErrors)
+
 function handleUsersList(users) {
   return JSON.parse(users).items
 }
+
 function repoRequest(users) {
   return Promise.all(users.map(function(user) {
     return request(user.repos_url)
   }))
 }
+
 function handleReposList(repos) {
   console.log('All users repos in an array', repos)
 }
+
 function handleErrors(error) {
   console.error('Something went wrong ', error)
 }
 ```
 
-Bằng cách nhìn vào những gì <code>userRequest</code> đang đợi theo thứ tự với <code>.then</code> bạn có thể có được một cảm giác về những gì chúng tôi mong đợi của khối mã này. Mọi thứ đều ít nhiều tách biệt theo trách nhiệm. 
+Bằng cách nhìn vào  chuỗi <code>.then</code> đằng sau <code>userRequest</code> bạn có thể biết được cái chúng ta mong đợi từ đoạn code này. Mọi thứ đều có nhiệm vụ riêng. 
 
-Đây là "scratching the surface" của những gì Promises được. Để có một cái nhìn sâu sắc về cách họ làm việc tôi không thể khuyên bạn nên đủ [bài báo này](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html).
+Đây chỉ là "bề nổi" về Promises. Để có một cái nhìn sâu sắc về cách chúng làm việc tôi khuyên bạn nên đọc thêm [bài viết này](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html).
 
 ## Generators
+Một hướng tiếp cận khác là sử dụng generators. Phần này hơi nâng cao một chút vì thế nếu mới bắt đầu có thể thoải mái bỏ qua phần này.
+
+Generators cho phép bạn viết code bất đồng bộ giống như đồng bộ.
+
+Chúng được biểu diễn bằng dấu <code>*</code> trong một hàm như thế này:
+
+```javascript
+function* foo() {
+  yield 1
+  const args = yield 2
+  console.log(args)
+}
+var fooIterator = foo()
+
+console.log(fooIterator.next().value) // will log 1
+console.log(fooIterator.next().value) // will log 2
+
+fooIterator.next('aParam') // will log the console.log inside the generator 'aParam'
+```
+
+Thay vì trả lại với câu lệnh <code>return</code>, generators có một câu lệnh <code>yield</code>. Nó dừng thực thi hàm cho đến khi một phương thức <code>.next</code> được gọi. Tương tự với <code>.then</code> của promise chỉ thực thi khi resoled được trả lại.
+
+Hàm request của chúng ta sẽ trông như thế này:
+
+```javascript
+function request(url) {
+  return function(callback) {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(e) {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          callback(null, xhr.response)
+        } else {
+          callback(xhr.status, null)
+        }
+      }
+    }
+    xhr.ontimeout = function () {
+      console.log('timeout')
+    }
+    xhr.open('get', url, true)
+    xhr.send()
+  }
+}
+```
+
+Chúng ta muốn <code>url</code> như một tham số. Nhưng thay vì thực thi request ngay lập tức, chúng ta chỉ muốn khi có một callback để xử lý kết quả trả về (response).
+
+<code>generator</code> sẽ như thế này:
+
+```javascript
+function* list() {
+  const userGet = `https://api.github.com/search/users?page=1&q=daspinola&type=Users`
+ 
+  const users = yield request(userGet)
+  
+  yield
+  
+  for (let i = 0; i<=users.length; i++) {
+    yield request(users[i].repos_url)
+  }
+}
+```
+
+Nó sẽ:
+
+- Chờ cho đến khi <code>request</code> được chuẩn bị
+- Chấp nhận một tham số <code>url</code> và trả lại <code>function</code> với tham số là một <code>callback</code>
+- Nhận <code>users</code> để gửi tới <code>.next</code> tiếp theo
+- Lặp qua <code>users</code>
+- Chờ <code>.next</code> cho mỗi <code>users</code>
+- Trả lại hàm callback tương ứng với chúng
+
+Đoạn code để thực thi sẽ như thế này:
+
+```javascript
+try {
+  const iterator = list()
+  iterator.next().value(function handleUsersList(err, users) {
+    if (err) throw err
+    const list = JSON.parse(users).items
+    
+    // send the list of users for the iterator
+    iterator.next(list)
+    
+    list.forEach(function(user) {
+      iterator.next().value(function userRepos(error, repos) {
+        if (error) throw repos
+
+        // Handle each individual user repo here
+        console.log(user, JSON.parse(repos))
+      })
+    })
+  })  
+} catch (e) {
+  console.error(e)
+}
+```
+
+Bạn sẽ thấy đoạn code này có những vấn đề tương tự callback hell.
+
+Giống như [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function), một trình biên dịch được khuyến khích. Bởi vì nó không được hỗ trợ trong các trình duyệt cũ.
+
+Ngoài ra, theo kinh nghiệm của tôi generators không phổ biến. Vì thế có thể phát sinh nhầm lẫm trong code base được bảo dưỡng bởi nhiều lập trình viên khác nhau.
+
+Cách generators làm việc có thể được tìm thấy trong bài viết [này](https://codeburst.io/generators-in-javascript-1a7f9f884439) và đây là một [tài nguyên khác](http://chrisbuttery.com/articles/synchronous-asynchronous-javascript-with-es6-generators/).
 
 ## Async/Await
+Phương thức này giống như pha trộn generators với promises. Bạn chỉ cần khai báo function nào là <code>async</code>. Và phần nào trong code sẽ có <code>await</code> để <code>promise</code> kết thúc.
+
+```javascript
+sumTwentyAfterTwoSeconds(10)
+  .then(result => console.log('after 2 seconds', result))
+
+async function sumTwentyAfterTwoSeconds(value) {
+  const remainder = afterTwoSeconds(20)
+  return value + await remainder
+}
+
+function afterTwoSeconds(value) {
+  return new Promise(resolve => {
+    setTimeout(() => { resolve(value) }, 2000);
+  });
+}
+```
+
+Trong kịch bản này:
+
+- Chúng ta có <code>sumTwentyAfterTwoSeconds</code> là một hàm async
+- Chúng ta chờ <code>resolve</code> hoặc <code>reject</code> cho hàm promise <code>afterTwoSeconds</code>
+- Nó sẽ chỉ kết thúc trong <code>.then</code> khi <code>await</code> kết thúc.
+
+Áp dụng vào hàm <code>request</code> chúng ta sẽ để nó như một <code>promise</code> đã thấy trước đó:
+
+```javascript
+function request(url) {
+  return new Promise(function(resolve, reject) {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(e) {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          resolve(xhr.response)
+        } else {
+          reject(xhr.status)
+        }
+      }
+    }
+    xhr.ontimeout = function () {
+      reject('timeout')
+    }
+    xhr.open('get', url, true)
+    xhr.send()
+  })
+}
+```
+
+Chúng ta tạo hàm <code>async</code> với các <code>await</code> như thế này:
+
+```javascript
+async function list() {
+  const userGet = `https://api.github.com/search/users?page=1&q=daspinola&type=Users`
+  
+  const users = await request(userGet)
+  const usersList = JSON.parse(users).items
+  
+  usersList.forEach(async function (user) {
+    const repos = await request(user.repos_url)
+    
+    handleRepoList(user, repos)
+  })
+}
+function handleRepoList(user, repos) {
+  const userRepos = JSON.parse(repos)
+  
+  // Handle each individual user repo here
+  console.log(user, userRepos)
+}
+```
+
+Bây giờ chúng ta có một hàm async <code>list</code>, cái sẽ xử lý các request. Một hàm async là cần thiết trong <code>forEach</code> vì chúng ta có danh sách <code>repos</code> của mỗi người dùng.
+
+Chúng ta gọi hàm <code>list</code>:
+
+```javascript
+list()
+  .catch(e => console.error(e))
+```
+
+Phương pháp này và promises là những phương pháp yêu thích của tôi vì chúng dễ đọc và dễ thay đổi. Bạn có thể đọc nhiều hơn về async/await ở [đây](https://davidwalsh.name/async-await).
+
+Một nhược điểm của việc sử dụng async/await là chúng không được hỗ trợ trong các trình duyệt cũ ở phía front-end. Ở phía back-end bạn phải sử dụng Node 8 trở lên.
+
+Bạn có thể sử dụng một trình biên dịch như [babel](https://babeljs.io/) để giải quyết vấn đề này.
 
 ## Giải pháp
+Bạn có thể xem source code sử dụng async/await ở [đây](https://codepen.io/daspinola/pen/EvOEKB).
 
-Bạn có thể xem [code](https://codepen.io/daspinola/pen/EvOEKB) hoàn thành mục tiêu ban đầu của chúng tôi bằng cách sử dụng async / await trong đoạn mã này. 
-
-Một điều tốt để làm là để thử nó cho mình trong các hình thức khác nhau được tham chiếu trong bài viết này.
+Bạn cũng có thể tự thử những cách khác nhau đã được đề cập trong bài viết này.
 
 ## Kết luận
+Tùy thuộc vào từng tình huống mà bạn có thể sử dụng:
+
+- async/await
+- callbacks
+- hỗn hợp
+
+Nó phụ thuộc vào mục đích của bạn. Và cái nào sẽ dễ hiểu với những người khác và với chính bạn trong tương lai để có thể dễ dàng bảo trì code.
 
 ## Đọc thêm
 [https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
