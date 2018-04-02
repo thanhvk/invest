@@ -672,7 +672,7 @@ hr {
   display: block;
   height: 170px;
   background-repeat: no-repeat;
-  background-position: 0 50%;
+  background-position: 50% 50%;
   background-size: cover;
 }
 

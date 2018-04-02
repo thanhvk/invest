@@ -2,7 +2,7 @@
 date = "2018-04-01T13:59:46+02:00"
 tags = ["javascript"]
 title = "JavaScript: từ callbacks tới async/await"
-description = "Làm thế nào tôi biến code bất đồng bộ thành đồng bộ?. Hi vọng rằng tôi sẽ cho bạn thấy câu trả lời"
+description = "Mục tiêu của bạn là phải hiểu được sự khác biệt của các cách tiếp cận và cách bạn có thể tận dụng chúng cho công việc của mình"
 keywords = ""
 image = "/img/javascript-from-callbacks-to-async-await-1cc090ddad99.jpg"
 draft = false
