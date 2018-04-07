@@ -493,7 +493,7 @@ figcaption {
 
 blockquote {
   background-color: #ecf3f7;
-  margin: 0;
+  margin: 16px 0;
   padding: 0 20px;
   border-radius: 3px;
   border: 1px solid #ccc;
