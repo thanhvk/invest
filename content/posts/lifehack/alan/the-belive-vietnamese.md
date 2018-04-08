@@ -2,7 +2,7 @@
 date = "2018-02-13T13:56:46+02:00"
 tags = ["alan"]
 title = "Niềm tin vào con người Việt"
-description = "Trong dòng đời, đối diện những thử thách khó khăn, chính con người lì như tôi cũng nhiều lúc muốn buông thả. Nhưng nhìn những tấm gương như chị Gấm, tôi thấy mình không có quyền bỏ cuộc"
+description = "Một nhân công nghèo hèn, thất học với một nhan sắc kém cỏi, lại gặp nhiều gian truân, chị đã lên tới đỉnh sung túc của một xã hội có sự cạnh tranh khắc nghiệt giữa nhiều loại dân tứ xứ"
 image = "/img/the-belevie-vietnamese.jpg"
 draft = false
 +++
