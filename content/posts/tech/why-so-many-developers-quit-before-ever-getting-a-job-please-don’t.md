@@ -54,7 +54,7 @@ Tôi đã nói chuyện với các đồng nghiệp tại công ty. Đã nghiên
 
 *"Tôi cảm thấy như mình chỉ copy những thứ trong các video và chỉ có vậy."*
 
-*"Tôi phải làm gì với googling cho các ví dụ mà người khác đã viết. Tôi cảm thấy như một đứa trẻ 3 tuổi đang cố giải quyết các câu đó tích phân. Nó thật bực mình."*
+*"Tôi phải googling gì cho các ví dụ mà người khác đã viết. Tôi cảm thấy như một đứa trẻ 3 tuổi đang cố giải quyết các câu đó tích phân. Nó thật bực mình."*
 
 *"Tôi không thể suy nghĩ như một lập trình viên"*
 
