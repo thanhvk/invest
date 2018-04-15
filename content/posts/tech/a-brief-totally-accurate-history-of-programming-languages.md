@@ -58,7 +58,7 @@ Nữ hoàng sau đó đã ân xá cho ông ta, nhưng tiếc rằng ông đã qu
 [Brac Box](https://en.wikipedia.org/wiki/Brad_Cox) và [Tol Move](https://en.wikipedia.org/wiki/Tom_Love) quyết định tạo thêm một phiên bản C dựa trên Smalltalk, cái được gọi là Objective-C.
 
 ## 1983
-[Bjarne Stroustrup](https://en.wikipedia.org/wiki/Bjarne_Stroustrup bổ sung thêm nhiều tính năng nâng cao mà ông có thể nghĩ ra cho C và đặt cho ngôn ngữ lập trình này là C++.
+[Bjarne Stroustrup](https://en.wikipedia.org/wiki/Bjarne_Stroustrup) bổ sung thêm nhiều tính năng nâng cao mà ông có thể nghĩ ra cho C và đặt cho ngôn ngữ lập trình này là C++.
 
 ## 1991
 [Guido van Rossum](https://en.wikipedia.org/wiki/Guido_van_Rossum) phát minh ra Python, cú pháp được chọn lấy cảm hứng từ Monty Python và Flying Circus.
@@ -83,7 +83,7 @@ Java trở thành một thương hiệu và điều này đem đến rắc rối
 [James Gosling](https://en.wikipedia.org/wiki/James_Gosling) phát minh Java, ngôn ngữ đầu tiên thực sự hướng đối tượng nơi các quy tắc design patterns được chú ý hơn chủ nghĩa thực dụng.
 
 ## 2001
-[Anders Hejlsberg] viết lại Java và gọi nó là C# bởi vì lập trình trong C tuyệt hơn Java. Mọi người thích phiên bản Java mới này vì nó hoàn toàn không giống Java.
+Anders Hejlsberg viết lại Java và gọi nó là C# bởi vì lập trình trong C tuyệt hơn Java. Mọi người thích phiên bản Java mới này vì nó hoàn toàn không giống Java.
 
 ## 2005
 [David Hanselmeyer Hansen](https://en.wikipedia.org/wiki/David_Heinemeier_Hansson) tạo ra một web framework được gọi là Ruby on Rails, và mọi người không còn nhớ rằng chúng là hai thứ riêng biệt.
@@ -96,13 +96,13 @@ Java trở thành một thương hiệu và điều này đem đến rắc rối
 
 Họ gọi nó là Go, biến nó thành open source và bán những chiếc gối và mũ bảo hiểm có thương hiệu Gopher.
 
- ## 2010 
+## 2010 
  Gray Hoare cũng muốn tạo một ngôn ngữ giống C, anh ấy gọi nó là Rust. Sau đó, Graydon chuyển sang làm việc trên Swift cho Apple.
 
- ## 2012
+## 2012
  [Angers Hjelsberg](http://anders%20hejlsberg/) muốn viết C# trong các trình duyệt web, anh đã thiết kế TypeScript tương tự JavaScript nhưng vay mượn nhiều ý tưởng từ Java.
 
- ## 2013
+## 2013
 [Jaremy Ashkenas](https://en.wikipedia.org/wiki/Jeremy_Ashkenas) muốn hạnh phúc giống như các lập trình viên Ruby vì thế anh tạo ra CoffeeScript ngôn ngữ trông giống Ruby nhưng được biên dịch thành JavaScript. Nhưng Jeremy chưa bao giờ thực sự hạnh phúc như Matz và các lập trình viên Ruby.
 
 ## 2014
