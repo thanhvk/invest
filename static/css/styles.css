@@ -528,7 +528,7 @@ hr {
   margin-right: 5%;
   float: right; }
 
-.post-content {
+.post-content-container {
   width: 660px;
   margin: 0 auto;
 }
@@ -694,6 +694,37 @@ hr {
 
 .share-buttons li a {
   font-size: 25px; }
+
+.share-buttons-fix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(250px, 120px)
+}
+
+.share-buttons-fix li {
+  display: block;
+  margin: 15px 0;
+}
+
+.share-buttons-fix li a {
+  color: #d6d6d6;
+}
+
+.share-buttons-fix li a:hover {
+  text-decoration: none;
+  color: #bfbfbf;
+}
+
+.share-buttons-fix-fadeOut {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.share-buttons-fix-fadeIn {
+  visibility: visible;
+  opacity: 1;
+}
 
 .comments {
   margin-bottom: 60px; }
@@ -867,7 +898,7 @@ body.post-template .site-header h2 .logo {
     width: 90%;
     padding-top: 25px; }
 
-  .post-content {
+  .post-content-container {
     width: 100%;
   }
 
