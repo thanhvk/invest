@@ -16,9 +16,9 @@ theme = "hugo-minimalist-theme"
     location = "Hà Nội, Việt Nam"
     # Link custom assets relative to /static
     avatar = "img/profile-image.jpg"
-    header_background = "img/desk.jpg"
+    header_background = "img/header-bg-study-light.jpg"
     header_title = "Knowledge is power"
-    header_quotations = "Tôi không sợ khuyết tật trên cơ thể, cái tôi sợ là khuyết tật trong tâm hồn. Cơ thể có thể bỏ cuộc, nhưng đầu óc thì tuyệt đối không - TS. Alan Phan"
+    header_quotations = "Hãy học khi người khác ngủ; lao động khi người khác lười nhác; chuẩn bị khi người khác chơi bời; và có giấc mơ khi người khác chỉ ao ước."
     keywords = "Web, HTML, CSS, JavaScript, Front-end, Blockchain, Segwit"
     copyright = "Powered by [Hugo](http://gohugo.io)."
     custom_css = []

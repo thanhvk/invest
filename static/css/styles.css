@@ -529,7 +529,7 @@ hr {
   float: right; }
 
 .post-content {
-  width: 700px;
+  width: 660px;
   margin: 0 auto;
 }
 
@@ -563,7 +563,7 @@ hr {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 300;
-  max-width: 700px;
+  max-width: 660px;
   margin: 7px auto;
   line-height: 20px;
 }
@@ -571,7 +571,7 @@ hr {
 .transparent-layer {
     width: 100%;
     height: 100%;
-    background-color: rgba(34, 34, 34, 0.6);
+    background-color: rgba(4, 23, 39, 0.6);
 }
 
 .site-header h2 .logo {
@@ -693,7 +693,7 @@ hr {
   margin-right: 4px; }
 
 .share-buttons li a {
-  font-size: 15px; }
+  font-size: 25px; }
 
 .comments {
   margin-bottom: 60px; }
