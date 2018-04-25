@@ -15,13 +15,13 @@ draft = false
 
 > "Bạn đang thiếu điểm này."
 
-Đây không phải bữa tối đầu tiên với một founder đầy triển vọng đang tìm kiếm lời khuyên của tôi, nó sẽ dẫn tới lời khuyên này. Và cũng không phải là lần cuối cùng.
+Đây không phải bữa tối đầu tiên của tôi với một founder đầy triển vọng đang tìm kiếm lời khuyên, nó sẽ dẫn tới lời khuyên này. Và cũng không phải là lần cuối cùng.
 
 Tôi cũng biết rằng sẽ phải giải thích theo cách khác. Cần tránh cụm từ "đam mê chẳng liên quan".
 
 Vì thế tôi bắt đầu,
 
-> "Đam mê là một công mạnh mẽ, nhưng nó không đảm bảo rằng khách hàng sẽ thích sản phẩm của bạn."
+> "Đam mê là một công cụ mạnh mẽ, nhưng nó không đảm bảo rằng khách hàng sẽ thích sản phẩm của bạn."
 
 Tôi thường mất một khoảng thời gian khó khăn để giải thích khái niệm này, bởi vì không ai muốn nghe rằng đam mê không phải là thành phần bí mật để tạo nên một doanh nghiệp thành công.
 
