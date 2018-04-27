@@ -594,7 +594,16 @@ hr {
 }
 
 .post h2 {
-  margin-top: 0; }
+  margin-top: 35px;
+  margin-bottom: 35px;
+  font-size: 28px;
+}
+
+.post h3 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 23px;
+}
 
 .post p {
     font-weight: 400;
