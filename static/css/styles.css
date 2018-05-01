@@ -121,8 +121,10 @@ h1 {
  * Address styling not present in IE 8/9.
  */
 mark {
-  background: #ff0;
-  color: #000; }
+  background: rgba(245, 217, 149, 0.3);
+  color: #c7254e;
+  padding: 0 5px;
+}
 
 /**
  * Address inconsistent and variable font size in all browsers.
@@ -529,7 +531,7 @@ hr {
   float: right; }
 
 .post-content-container {
-  width: 660px;
+  width: 700px;
   margin: 0 auto;
 }
 
@@ -563,7 +565,7 @@ hr {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 300;
-  max-width: 660px;
+  max-width: 700px;
   margin: 7px auto;
   line-height: 20px;
 }
@@ -607,7 +609,9 @@ hr {
 
 .post p {
     font-weight: 400;
-    line-height: 28px; }
+    line-height: 28px; 
+    font-size: 1em;
+  }
 
 .post h2 a,
 .post-template h1 {
@@ -708,7 +712,7 @@ hr {
   position: fixed;
   top: 0;
   left: 0;
-  transform: translate(250px, 120px)
+  transform: translate(230px, 120px)
 }
 
 .share-buttons-fix li {
@@ -899,6 +903,10 @@ body.post-template .site-header h2 .logo {
   .site-header h2 {
       font-size: 45px;
       font-weight: 300;
+  }
+
+  .post p {
+    font-size: 1.1em;
   }
 }
 
