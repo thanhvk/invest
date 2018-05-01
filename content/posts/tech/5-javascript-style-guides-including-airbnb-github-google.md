@@ -5,7 +5,7 @@ title = "5 JavaScript Style Guidles -- Bao gồm Airbnb, GitHub, & Google"
 description = "Tại sao chúng ta cần các style guide? Vì một lý do chính: Mọi người viết code theo những cách khác nhau"
 keywords = "javascript, style guides, coding, conventions, airbnb, github, google, jquery"
 image = "/img/man_walking_dog2.jpg"
-draft = false
+draft = true
 +++
 
 *Bài viết được dịch từ: [codeburst.io](https://codeburst.io/5-javascript-style-guides-including-Airbnb-github-google-88cbc6b2b7aa)*
