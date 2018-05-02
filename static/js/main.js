@@ -22,3 +22,15 @@ function toggleSharePostWidget() {
 
     condition ? $_jsSharePostWidget.removeClass("share-buttons-fix-fadeOut").addClass("share-buttons-fix-fadeIn") : $_jsSharePostWidget.removeClass("share-buttons-fix-fadeIn").addClass("share-buttons-fix-fadeOut");
 }
+
+$(".js-share-post-widget").jsSocials({
+    showLabel: false,
+    shareIn: "popup",
+    showCount: "inside",
+    shares: ["facebook", "twitter", "googleplus", "linkedin"]
+});
+
+$(".js-share-post").jsSocials({
+    shareIn: "popup",
+    shares: ["facebook", "twitter", "googleplus", "linkedin"]
+});

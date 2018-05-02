@@ -972,3 +972,34 @@ body.post-template .site-header h2 .logo {
 
 .clearfix:after {
   clear: both; }
+
+.post .hr-note-share {
+  margin: 40px 0 10px 0;
+}
+
+.post .note-share {
+  font-family: "Roboto", serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #7c7c7c;
+  margin: 10px 0 0 0;
+}
+
+.jssocials-share-link:hover {
+  text-decoration: none;
+}
+
+.share-buttons-fix .jssocials-share-link { 
+  border-radius: 50%; 
+}
+
+.share-buttons-fix .jssocials-share {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.share-buttons  .jssocials-share-link .jssocials-share-label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: .9em;
+}
