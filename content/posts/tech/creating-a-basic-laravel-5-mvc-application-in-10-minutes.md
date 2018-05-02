@@ -1,16 +1,30 @@
 +++
-date = "2018-04-30T13:59:46+02:00"
+date = "2018-05-01T13:59:46+02:00"
 tags = ["laravel"]
 title = "Tạo ứng dụng MVC cơ bản với Laravel 5 trong 10 phút"
 description = "Một ứng dụng MVC rất giống với trò chơi xếp hình Lego. Và xây dựng ứng dụng MVC với Laravel 5 thật dễ dàng"
 keywords = "laravel, symfony, php, php framework, mvc, web app"
 image = "/img/mvc_diagram_with_routes_laravel.jpg"
-draft = true
+draft = false
 +++
 
 *Bài viết được dịch từ: [selftaughtcoders.com](https://selftaughtcoders.com/from-idea-to-launch/lesson-17/laravel-5-mvc-application-in-10-minutes/)*
 
-Các ứng dụng Laravel theo mô hình **Model-View-Controller** truyền thống, nơi bạn sử dụng:
+## Nội dung
+<!-- TOC -->
+
+1. [Giới thiệu](#giới-thiệu)
+2. [Xây dựng ứng dụng mẫu](#xây-dựng-ứng-dụng-mẫu)
+3. [Model](#model)
+4. [Controller](#controller)
+5. [Các route](#các-route)
+6. [Hành động <mark>show</mark> của controller](#hành-động-markshowmark-của-controller)
+7. [View](#view)
+
+<!-- /TOC -->
+
+## Giới thiệu
+Các ứng dụng Laravel theo mô hình **Model-View-Controller** truyền thống gồm có:
 
 - **Các controller** xử lý các request của người dùng và truy xuất dữ liệu, bằng cách tận dụng các Model.
 
@@ -20,7 +34,7 @@ Các ứng dụng Laravel theo mô hình **Model-View-Controller** truyền th�
 
 Ngoài ra, **các route** được sử dụng để ánh xạ các URL tới các hành động được chỉ định trong controller, như hình dưới đây:
 
-![](https://selftaughtcoders.com/wp-content/uploads/2015/07/mvc_diagram_with_routes.png)
+![](/img/mvc_diagram_with_routes_laravel.jpg)
 <figcaption>Vòng đời request trong ứng dụng Laravel 5</figcaption>
 
 Phân tích:
@@ -136,7 +150,7 @@ Bạn có thể tạo một **resource controller** -- một controller xử lý
 $ php artisan make:controller CarController
 ```
 
-Lệnh này sẽ tạo ra controller <code>app/Http/Controllers/CarController.php với nội dung như sau:</code>
+Lệnh này sẽ tạo ra controller <code>app/Http/Controllers/CarController.php</code> với nội dung như sau:
 
 ```php
 <?php
