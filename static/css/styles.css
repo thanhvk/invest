@@ -711,8 +711,8 @@ hr {
 .share-buttons-fix {
   position: fixed;
   top: 0;
-  left: 0;
-  transform: translate(230px, 120px)
+  margin-left: 80px;
+  transform: translateY(120px);
 }
 
 .share-buttons-fix li {
@@ -991,6 +991,21 @@ body.post-template .site-header h2 .logo {
 
 .share-buttons-fix .jssocials-share-link { 
   border-radius: 50%; 
+  border: 1px solid #cecece;
+  background: transparent;
+}
+
+.share-buttons-fix .jssocials-share-link:hover {
+  border: 1px solid transparent;
+}
+
+.share-buttons-fix .jssocials-share-link:hover .jssocials-share-count {
+  color: #fff;
+}
+
+.share-buttons-fix .jssocials-share-link .jssocials-share-logo,
+.share-buttons-fix .jssocials-share-link .jssocials-share-count {
+  color: #cecece;
 }
 
 .share-buttons-fix .jssocials-share {
@@ -1002,4 +1017,9 @@ body.post-template .site-header h2 .logo {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: .9em;
+}
+
+.jssocials-share-count-box .jssocials-share-count {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }

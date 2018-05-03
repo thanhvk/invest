@@ -10,7 +10,7 @@ function toggleSharePostWidget() {
     let windowWidth = $(window).width();
     let $_jsSharePostWidget = $(".js-share-post-widget");
 
-    if (windowWidth < 1280) {
+    if (windowWidth < 1024) {
         $_jsSharePostWidget.removeClass("share-buttons-fix-fadeIn").addClass("share-buttons-fix-fadeOut");
         return;
     }
@@ -25,12 +25,14 @@ function toggleSharePostWidget() {
 
 $(".js-share-post-widget").jsSocials({
     showLabel: false,
-    shareIn: "popup",
     showCount: "inside",
-    shares: ["facebook", "twitter", "googleplus", "linkedin"]
+    shareIn: "popup",
+    shares: ["facebook", "twitter", "linkedin"]
 });
 
 $(".js-share-post").jsSocials({
+    showLabel: true,
+    showCount: true,
     shareIn: "popup",
     shares: ["facebook", "twitter", "googleplus", "linkedin"]
 });
