@@ -1,10 +1,8 @@
 $(window).on("scroll", _ => {
-    toggleSharePostWidget();
     toggleTOCPost();
 });
 
 $(window).on('resize', _ => {
-    toggleSharePostWidget();
     toggleTOCPost();
 });
 
@@ -15,24 +13,7 @@ $(".js-toc aside").on("click", _ => {
     isTocOpened = !isTocOpened;
 });
 
-function toggleSharePostWidget() {
-    let windowWidth = $(window).width();
-    let $_jsSharePostWidget = $(".js-share-post-widget");
-
-    if (windowWidth < 1024) {
-        $_jsSharePostWidget.removeClass("share-buttons-fix-fadeIn").addClass("share-buttons-fix-fadeOut");
-        return;
-    }
-
-    let siteHeaderHeight = $(".js-site-header").height(),
-        postContentHeight = $(".js-post-content").height(),
-        windowScrollTop = $(window).scrollTop();
-    let condition = ((siteHeaderHeight < windowScrollTop) && (windowScrollTop < postContentHeight - 200));
-
-    condition ? $_jsSharePostWidget.removeClass("share-buttons-fix-fadeOut").addClass("share-buttons-fix-fadeIn") : $_jsSharePostWidget.removeClass("share-buttons-fix-fadeIn").addClass("share-buttons-fix-fadeOut");
-}
-
-$(".js-share-post-widget").jsSocials({
+$(".js-toc-share-buttons").jsSocials({
     showLabel: false,
     showCount: "inside",
     shareIn: "popup",
@@ -50,7 +31,7 @@ $(".js-share-post").jsSocials({
 function toggleTOCPost(event) {
     let windowWidth = $(window).width();
 
-    if (windowWidth < 576) {
+    if (windowWidth < 576 || windowWidth > 1366) {
         $(".js-toc").removeClass("toc-fixed toc-fixed-slide-out");
         return;
     } else {

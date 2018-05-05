@@ -986,54 +986,26 @@ body.post-template .site-header h2 .logo {
   margin: 10px 0 0 0;
 }
 
-/* jsSocial overwrite style */
-.jssocials-share-link:hover {
-  text-decoration: none;
-}
-
-.share-buttons-fix .jssocials-share-link { 
-  border-radius: 50%; 
-  border: 1px solid #cecece;
-  background: transparent;
-}
-
-.share-buttons-fix .jssocials-share-link:hover {
-  border: 1px solid transparent;
-}
-
-.share-buttons-fix .jssocials-share-link:hover .jssocials-share-count {
-  color: #fff;
-}
-
-.share-buttons-fix .jssocials-share-link .jssocials-share-logo,
-.share-buttons-fix .jssocials-share-link .jssocials-share-count {
-  color: #cecece;
-}
-
-.share-buttons-fix .jssocials-share {
-  display: block;
-  margin-bottom: 15px;
-}
-
 .share-buttons  .jssocials-share-link .jssocials-share-label {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: .9em;
 }
 
-.jssocials-share-count-box .jssocials-share-count {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+/* TOC post */
+.toc aside,
+.toc footer,
+.toc hr {
+  display: none;
 }
 
-/* TOC post */
 .toc-fixed {
   position: fixed;
   top: 0;
   width: 320px;
   background:#f5f5f5;
   transition: all 0.5s ease;
-  padding-bottom: 150px;
+  padding-bottom: 25px;
 }
 
 .toc-fixed h2 {
@@ -1069,12 +1041,13 @@ body.post-template .site-header h2 .logo {
   background:#f26c4f;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  cursor: pointer;
-  display: block !important;
+  cursor: pointer;  
 }
 
-.toc aside {
-  display: none;
+.toc-fixed aside,
+.toc-fixed hr,
+.toc-fixed footer {
+  display: block !important;
 }
 
 .toc-fixed aside i {
@@ -1084,4 +1057,17 @@ body.post-template .site-header h2 .logo {
 .toc-fixed aside span {
   margin-left: 25px;
   margin-right: 20px;
+}
+
+.toc-fixed footer {
+  margin-left: 30px;
+}
+
+.toc-fixed footer .jssocials-share-link { 
+  border-radius: 50%; 
+  margin-right: 5px;
+} 
+
+.toc-fixed hr {
+  margin: 20px 0;
 }
