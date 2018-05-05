@@ -10,7 +10,7 @@ draft = false
 
 *Bài viết được dịch từ: [merixstudio.com](https://www.merixstudio.com/blog/laravel-vs-symfony-clash-frameworks/)*
 
-## Nội dung
+{{% tocsection %}}
 
 <!-- TOC -->
 
@@ -35,6 +35,8 @@ draft = false
 14. [Laravel vs Symfony - cái nào tốt hơn?](#laravel-vs-symfony---cái-nào-tốt-hơn)
 
 <!-- /TOC -->
+
+{{% /tocsection %}}
 
 ## Giới thiệu
 

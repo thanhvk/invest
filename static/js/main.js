@@ -32,7 +32,7 @@ function toggleTOCPost(event) {
     let windowWidth = $(window).width();
 
     if (windowWidth < 576 || windowWidth > 1366) {
-        $(".js-toc").removeClass("toc-fixed toc-fixed-slide-out");
+        $(".js-toc").removeClass("toc-fixed toc-fixed-slide-out toc-fixed-slide-in");
         return;
     } else {
         if ($(".toc-fixed-slide-in").length === 0) {
@@ -42,10 +42,9 @@ function toggleTOCPost(event) {
 
     let siteHeaderHeight = $(".js-site-header").height(),
         homeButtonHeight = $(".js-home-button").height(),
-        postTitleHeight = $(".js-post-title").height(),
         windowScrollTop = $(window).scrollTop();
 
-    let conditionHeight = (windowScrollTop > (siteHeaderHeight + homeButtonHeight + postTitleHeight));    
+    let conditionHeight = (windowScrollTop >= (siteHeaderHeight + homeButtonHeight));    
     conditionHeight ? $(".js-toc").fadeIn(100) : $(".js-toc").fadeOut(100);
 }
 
