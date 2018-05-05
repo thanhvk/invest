@@ -29,6 +29,10 @@ $(".js-share-post").jsSocials({
 
 // TOC slide
 function toggleTOCPost(event) {
+    if ($(".toc").length === 0) {
+        return;
+    }
+
     let windowWidth = $(window).width();
 
     if (windowWidth < 576 || windowWidth > 1366) {
