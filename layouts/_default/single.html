@@ -1,9 +1,9 @@
 {{ partial "header" . }}
 
 <div class="container clearfix">
-    <main role="main" class="post-content-container">
-        <article class="post js-post-content">
-            <a class="btn home" href="{{ .Site.BaseURL }}" title="{{ .Site.Data.l10n.article.back_to_home }}">&laquo; {{ .Site.Data.l10n.article.back_to_home }}</a>
+    <main role="main" class="post-container">
+        <article class="post post-content js-post-content">
+            <a class="btn home js-home-button" href="{{ .Site.BaseURL }}" title="{{ .Site.Data.l10n.article.back_to_home }}">&laquo; {{ .Site.Data.l10n.article.back_to_home }}</a>
             {{ partial "article-header" . }}
             {{ .Content}}
             {{ partial "article-share" . }}

@@ -1,9 +1,18 @@
 $(window).on("scroll", _ => {
     toggleSharePostWidget();
+    toggleTOCPost();
 });
 
 $(window).on('resize', _ => {
     toggleSharePostWidget();
+    toggleTOCPost();
+});
+
+let isTocOpened = false;
+
+$(".js-toc aside").on("click", _ => {
+    isTocOpened ? $(".js-toc").removeClass("toc-fixed-slide-in").addClass("toc-fixed-slide-out") : $(".js-toc").removeClass("toc-fixed-slide-out").addClass("toc-fixed-slide-in");
+    isTocOpened = !isTocOpened;
 });
 
 function toggleSharePostWidget() {
@@ -36,3 +45,27 @@ $(".js-share-post").jsSocials({
     shareIn: "popup",
     shares: ["facebook", "twitter", "googleplus", "linkedin"]
 });
+
+// TOC slide
+function toggleTOCPost(event) {
+    let windowWidth = $(window).width();
+
+    if (windowWidth < 576) {
+        $(".js-toc").removeClass("toc-fixed toc-fixed-slide-out");
+        return;
+    } else {
+        if ($(".toc-fixed-slide-in").length === 0) {
+            $(".js-toc").addClass("toc-fixed toc-fixed-slide-out")
+        }
+    }
+
+    let siteHeaderHeight = $(".js-site-header").height(),
+        homeButtonHeight = $(".js-home-button").height(),
+        postTitleHeight = $(".js-post-title").height(),
+        windowScrollTop = $(window).scrollTop();
+
+    let conditionHeight = (windowScrollTop > (siteHeaderHeight + homeButtonHeight + postTitleHeight));    
+    conditionHeight ? $(".js-toc").fadeIn(100) : $(".js-toc").fadeOut(100);
+}
+
+

@@ -530,7 +530,7 @@ hr {
   margin-right: 5%;
   float: right; }
 
-.post-content-container {
+.post-container {
   width: 700px;
   margin: 0 auto;
 }
@@ -919,7 +919,7 @@ body.post-template .site-header h2 .logo {
     width: 90%;
     padding-top: 25px; }
 
-  .post-content-container {
+  .post-container {
     width: 100%;
   }
 
@@ -973,6 +973,7 @@ body.post-template .site-header h2 .logo {
 .clearfix:after {
   clear: both; }
 
+/* Share section in below post content */
 .post .hr-note-share {
   margin: 40px 0 10px 0;
 }
@@ -985,6 +986,7 @@ body.post-template .site-header h2 .logo {
   margin: 10px 0 0 0;
 }
 
+/* jsSocial overwrite style */
 .jssocials-share-link:hover {
   text-decoration: none;
 }
@@ -1022,4 +1024,64 @@ body.post-template .site-header h2 .logo {
 .jssocials-share-count-box .jssocials-share-count {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+}
+
+/* TOC post */
+.toc-fixed {
+  position: fixed;
+  top: 0;
+  width: 320px;
+  background:#f5f5f5;
+  transition: all 0.5s ease;
+  padding-bottom: 150px;
+}
+
+.toc-fixed h2 {
+  display: none;
+}
+
+.toc-fixed-slide-out {
+  right: -320px;
+}
+
+.toc-fixed-slide-in {
+  right: 0;
+}
+
+.toc-fixed-slide-in .fa-bars {
+  display: none;
+}
+
+.toc-fixed-slide-out .fa-times {
+  display: none;
+}
+
+.toc-fixed aside {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  color: #fff;
+  transform: rotate(-90deg);
+  padding: 3px 15px;
+  position: absolute;
+  top: 90px;
+  left: -95px;
+  background:#f26c4f;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+  display: block !important;
+}
+
+.toc aside {
+  display: none;
+}
+
+.toc-fixed aside i {
+  transform: rotate(90deg);
+}
+
+.toc-fixed aside span {
+  margin-left: 25px;
+  margin-right: 20px;
 }

@@ -10,7 +10,8 @@ draft = false
 
 *Bài viết được dịch từ: [selftaughtcoders.com](https://selftaughtcoders.com/from-idea-to-launch/lesson-17/laravel-5-mvc-application-in-10-minutes/)*
 
-## Nội dung
+{{% tocsection %}}
+
 <!-- TOC -->
 
 1. [Giới thiệu](#giới-thiệu)
@@ -18,10 +19,12 @@ draft = false
 3. [Model](#model)
 4. [Controller](#controller)
 5. [Các route](#các-route)
-6. [Hành động <mark>show</mark> của controller](#hành-động-markshowmark-của-controller)
+6. [Hành động show của controller](#hành-động-show-của-controller)
 7. [View](#view)
 
 <!-- /TOC -->
+
+{{% /tocsection %}}
 
 ## Giới thiệu
 Các ứng dụng Laravel theo mô hình **Model-View-Controller** truyền thống gồm có:
@@ -52,7 +55,7 @@ Tôi thích nói rằng [một ứng dụng MVC rất giống với trò chơi x
 Và xây dựng một ứng dụng MVC sử dụng Laravel 5 thật dễ dàng.
 
 ## Xây dựng ứng dụng mẫu
-Để minh họa, tôi sẽ hướng dẫn bạn xây dựng một ứng dụng Laravel 5 mẫu với tất cả các thành phần MVC -- model, view và controller.
+Để minh họa, tôi sẽ hướng dẫn bạn xây dựng một ứng dụng mẫu với Laravel 5 với tất cả các thành phần MVC -- model, view và controller.
 
 Giả sử bạn muốn xây dựng một ứng dụng quản lý cars (xe hơi)...
 
@@ -259,7 +262,7 @@ Route::resource('cars', 'CarController');
 
 **Bây giờ, hãy hoàn thành trang Show Car**
 
-## Hành động <mark>show</mark> của controller
+## Hành động show của controller
 Như đã thấy trong bảng route ở phần trước, trang Show Car sẽ có URL tương ứng là <code>http://app.url/cars/{car}</code>. Trong trường hợp này, {car} sẽ là <code>id</code> của một đối tượng car trong database.
 
 Vì thế, URL để xem chiếc xe có <code>id</code> là <code>1</code> sẽ như thế này <code>http://app.url/cars/1</code>.
