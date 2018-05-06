@@ -993,6 +993,10 @@ body.post-template .site-header h2 .logo {
 }
 
 /* TOC post */
+.toc ul {
+  list-style-type: none;
+}
+
 .toc aside,
 .toc footer,
 .toc hr {
