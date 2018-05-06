@@ -15,7 +15,7 @@ draft = false
 
 {{% tocsection %}}
 
-<!-- TOC orderedList:false -->
+<!-- TOC insertAnchor:true orderedList:false -->
 
 - [1. Bắt buộc phải truyền các tham số](#1-bắt-buộc-phải-truyền-các-tham-số)
 - [2. Phương thức "reduce"](#2-phương-thức-reduce)
@@ -40,6 +40,7 @@ draft = false
 
 EcmaScript 2015 (hay còn gọi là ES6) đã ra mắt được một vài năm, và nhiều tính năng mới có thể được sử dụng theo những cách thông minh hơn. Tôi muốn liệt kê và thảo luận một vài trong số chúng, và hi vọng bạn sẽ thấy chúng hữu ích.
 
+<a id="markdown-1-bắt-buộc-phải-truyền-các-tham-số" name="1-bắt-buộc-phải-truyền-các-tham-số"></a>
 ## 1. Bắt buộc phải truyền các tham số
 ES6 cung cấp tính năng [default parameter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) cho phép bạn thiết lập giá trị mặc định để sử dụng nếu hàm được gọi mà không có tham số.
 
@@ -57,9 +58,11 @@ add(1, 2) //3
 add(1) // Error: Missing parameter.
 ```
 
+<a id="markdown-2-phương-thức-reduce" name="2-phương-thức-reduce"></a>
 ## 2. Phương thức "reduce"
 Phương thức reduce của mảng cực kỳ linh hoạt. Nó thường được sử dụng để chuyển một mảng các phần tử thành một giá trị duy nhất. **Nhưng bạn có thể làm nhiều hơn với nó.**
 
+<a id="markdown-21-sử-dụng-reduce-để-thực-hiện-đồng-thời-cả-map-và-filter" name="21-sử-dụng-reduce-để-thực-hiện-đồng-thời-cả-map-và-filter"></a>
 ### 2.1 Sử dụng reduce để thực hiện "đồng thời" cả map và filter
 Giả sử bạn có một danh sách các phần tử, và muốn cập nhật mỗi phần tử (sử dụng [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)), sau đó lọc ra chỉ một vài phần tử (sử dụng [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)). Nhưng như vậy có nghĩa là bạn sẽ lặp qua danh sách 2 lần!
 
@@ -84,9 +87,11 @@ const doubledOver50 = numbers.reduce((finalList, num) => {
 doubledOver50; // [60, 80]
 ```
 
+<a id="markdown-22-sử-dụng-reduce-thay-thế-cho-map-hoặc-filter" name="22-sử-dụng-reduce-thay-thế-cho-map-hoặc-filter"></a>
 ### 2.2 Sử dụng reduce thay thế cho map hoặc filter
 Nếu bạn xem ví dụ trên cẩn thận, bạn sẽ thấy rằng reduce có thể được sử dụng để thay thế cho filter hay map!
 
+<a id="markdown-23-sử-dụng-reduce-để-kiểm-tra-sự-cân-bằng-của-các-dấu-ngoặc-tròn" name="23-sử-dụng-reduce-để-kiểm-tra-sự-cân-bằng-của-các-dấu-ngoặc-tròn"></a>
 ### 2.3 Sử dụng reduce để kiểm tra sự cân bằng của các dấu ngoặc tròn
 Đây là một ví dụ về tính linh hoạt của phương thức reduce. Cung cấp một chuỗi với các dấu ngoặc tròn, chúng ta muốn biết chúng có cân bằng hay không? cụ thể là số ngoặc mở "(" và đóng ")" phải bằng nhau, và theo đúng thứ tự "(" đứng trước ")".
 
@@ -118,6 +123,7 @@ isParensBalanced('(()') // 1 <-- not balanced
 isParensBalanced(')(') // -1 <-- not balanced
 ```
 
+<a id="markdown-24-đếm-các-phần-tử-lặp-lại-trong-mảng-chuyển-mảng---đối-tượng" name="24-đếm-các-phần-tử-lặp-lại-trong-mảng-chuyển-mảng---đối-tượng"></a>
 ### 2.4 Đếm các phần tử lặp lại trong mảng (chuyển mảng -> đối tượng)
 Nhiều khi bạn muốn đếm các phần tử xuất hiện nhiều lần trong mảng hay chuyển một mảng thành một đối tượng. Bạn có thể sử dụng reduce.
 
@@ -138,7 +144,9 @@ carsObj; // => { BMW: 2, Benz: 2, Tesla: 1, Toyota: 1 }
 
 Có nhiều thứ bạn có thể làm với reduce, và tôi khuyến khích bạn đọc các ví dụ được liệt kêt trên [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce).
 
+<a id="markdown-3-object-destructuring" name="3-object-destructuring"></a>
 ## 3. Object destructuring
+<a id="markdown-31-loại-bỏ-những-thuộc-tính-không-mong-muốn" name="31-loại-bỏ-những-thuộc-tính-không-mong-muốn"></a>
 ### 3.1 Loại bỏ những thuộc tính không mong muốn
 Đôi khi bạn muốn loại bỏ những thuộc tính không muốn -- có thể là chúng chứa thông tin nhạy cảm hoặc chỉ là quá lớn. Thay vì lặp qua toàn bộ đối tượng để loại bỏ chúng, chúng ta chỉ cần trích xuất các thuộc tính tới các biến và giữ lại những thuộc tính hữu ích trong **rest** parameter.
 
@@ -152,6 +160,7 @@ let {_internal, tooBig, ...cleanObject} = {el1: '1', _internal:"secret", tooBig:
 console.log(cleanObject); // {el1: '1', el2: '2', el3: '3'}
 ```
 
+<a id="markdown-32-destructure-các-đối-tượng-lồng-nhau-trong-các-tham-số-của-hàm" name="32-destructure-các-đối-tượng-lồng-nhau-trong-các-tham-số-của-hàm"></a>
 ### 3.2 Destructure các đối tượng lồng nhau trong các tham số của hàm
 Trong ví dụ dưới đây, thuộc tính <code>engine</code> lồng trong đối tượng <code>car</code>. Nếu chúng ta muốn, giả sử thuộc tính là <code>vin</code> của <code>engine</code>, chúng ta có thể dễ dàng destructure như bên dưới:
 
@@ -174,6 +183,7 @@ const modelAndVIN = ({model, engine: {vin}}) => {
 modelAndVIN(car); // => model: bmw 2018  vin: 12345
 ```
 
+<a id="markdown-33-merge-các-đối-tượng" name="33-merge-các-đối-tượng"></a>
 ### 3.3 Merge các đối tượng
 ES6 đi kèm với spread operator (biểu thị bằng ba dấu chấm). Nó thường sử dụng để deconstruct các giá trị của mảng, nhưng bạn cũng có thể sử dụng nó trên các đối tượng.
 
@@ -190,7 +200,9 @@ let merged = {…object1, …object2} //spread and re-add into merged
 console.log(merged) // {a:1, b:30, c:40, d:50}
 ```
 
+<a id="markdown-4-sets" name="4-sets"></a>
 ## 4. Sets
+<a id="markdown-41-loại-bỏ-các-phần-tử-giống-nhau-trong-mảng-với-sets" name="41-loại-bỏ-các-phần-tử-giống-nhau-trong-mảng-với-sets"></a>
 ### 4.1 Loại bỏ các phần tử giống nhau trong mảng với Sets
 Trong ES6 bạn có thể dễ dàng loại bỏ các phần tử giống nhau sử dụng Sets, vì Sets chỉ cho phép lưu trữ các giá trị duy nhất.
 
@@ -201,6 +213,7 @@ let arr = [1, 1, 2, 2, 3, 3];
 let deduped = [...new Set(arr)] // [1, 2, 3]
 ```
 
+<a id="markdown-42-sử-dụng-các-phương-thức-của-mảng" name="42-sử-dụng-các-phương-thức-của-mảng"></a>
 ### 4.2 Sử dụng các phương thức của mảng
 Chuyển một Sets thành một mảng khá đơn giản với spread operator (<code>...</code>). Và bạn có thể sử dụng tất cả các phương thức của mảng trên Sets!
 
@@ -214,7 +227,9 @@ let mySet = new Set([1,2, 3, 4, 5]);
 var filtered = [...mySet].filter((x) => x > 3) // [4, 5]
 ```
 
+<a id="markdown-5-array-destructuring" name="5-array-destructuring"></a>
 ## 5. Array destructuring
+<a id="markdown-51-đảo-giá-trị" name="51-đảo-giá-trị"></a>
 ### 5.1 Đảo giá trị
 ![](https://cdn-images-1.medium.com/max/800/1*2ClNm34s6Uo3r4L5bZ6RVw.png)
 
@@ -229,6 +244,7 @@ console.log(param1) // 2
 console.log(param2) // 1
 ```
 
+<a id="markdown-52-nhận-và-gán-nhiều-giá-trị-từ-một-hàm" name="52-nhận-và-gán-nhiều-giá-trị-từ-một-hàm"></a>
 ### 5.2 Nhận và gán nhiều giá trị từ một hàm
 Trong ví dụ bên dưới chúng ta lấy một bài viết (post) tại <code>/post</code> và các bình luận liên quan tại <code>/comments</code>. Chúng ta sử dụng <code>aync/await</code>, và hàm trả lại kết quả trong một mảng. Sử dụng destructuring, chúng ta có thể gán kết quả trực tiếp tới các biến tương ứng.
 
