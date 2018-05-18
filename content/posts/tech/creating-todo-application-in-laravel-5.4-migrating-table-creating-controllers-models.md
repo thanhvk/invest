@@ -1,21 +1,52 @@
 +++
-date = "2018-05-01T13:59:46+02:00"
+date = "2018-05-12T13:59:46+02:00"
 tags = ["laravel"]
 title = "Tạo ứng dụng ToDo trong Laravel 5.4: Migrating Table, Controllers & Models"
 description = "Trong ứng dụng này, tôi sẽ đề cập nhiều khái niệm của Laravel bao gồm Migrations, Authentication, FileSystem và Eloquent ORM"
 keywords = "laravel, symfony, php, php framework, mvc, web app"
 image = "/img/Creating-ToDo-Application-in-Laravel-Banner.jpg"
-draft = true
+draft = false
 +++
 
 *Bài viết được dịch từ: [cloudways.com](https://www.cloudways.com/blog/create-todo-app-laravel-5-4/)*
 
+{{% tocsection %}}
+
+<!-- TOC -->
+
+- [Giới thiệu](#giới-thiệu)
+- [Cái tôi sẽ tạo là gì?](#cái-tôi-sẽ-tạo-là-gì)
+- [Tạo dự án Laravel](#tạo-dự-án-laravel)
+- [Tạo Database](#tạo-database)
+- [Tạo các table cho Migration](#tạo-các-table-cho-migration)
+- [Migrating các bảng sử dụng Artisan](#migrating-các-bảng-sử-dụng-artisan)
+- [Tạo các Model và Controller](#tạo-các-model-và-controller)
+- [Chỉnh sửa các model](#chỉnh-sửa-các-model)
+    - [<code>Todo</code> model](#codetodocode-model)
+    - [<code>User</code> model](#codeusercode-model)
+- [Tổng kết phần 1](#tổng-kết-phần-1)
+- [Cái tôi sẽ làm trong phần tiếp theo?](#cái-tôi-sẽ-làm-trong-phần-tiếp-theo)
+- [Tham khảo](#tham-khảo)
+
+<!-- /TOC -->
+
+{{% /tocsection %}}
+
+## Giới thiệu
 **Chú ý:** Loạt bài viết này giả sử rằng bạn đã có kiến thức về MVC và cách Laravel triển khai khái niệm này. Nếu bạn muốn tìm hiểu về chủ đề này, hãy đọc loạt bài viết của tôi về MVC trong Laravel bắt đầu từ [cài đặt Laravel 5.4](https://www.cloudways.com/blog/install-laravel-5-4-localhost/).
 
-Trong loạt bài này, tôi sẽ dựa trên loạt bài trước về Laravel và tạo một ứng dụng hoàn chỉnh sử dụng Laravel 5.4. Trong ứng dụng này, tôi sẽ đề cập nhiều khái niệm của Laravel bao gồm Migrations, Authentication, FileSystem và Eloquent ORM.
+Trong loạt bài này, tôi sẽ tạo một ứng dụng hoàn chỉnh sử dụng Laravel 5.4. Trong ứng dụng này, sẽ đề cập đến nhiều khái niệm của Laravel bao gồm Migrations, Authentication, FileSystem và Eloquent ORM.
 
-## Ứng dụng tôi sẽ tạo là gì?
-Ứng dụng ToDo sẽ có các chức năng sau:
+Các bài viết trong loạt bài này:
+
+1. Phần 1 -- Tạo ứng dụng ToDo trong Laravel 5.4: Migrating Table, Controllers & Models
+
+2. Phần 2 -- [Laravel 5.4 ToDo App: Thiết lập Authentication và ToDo Functionality](/posts/tech/laravel-5.4-todo-app-setting-authentication-and-todo-functionality/)
+
+3. Phần 3 -- [Giới thiệu về Laravel dusk: kiểm thử ứng dụng Todo](/posts/tech/introduction-to-laravel-dusk-testing-todo-app/)
+
+## Cái tôi sẽ tạo là gì?
+Tôi sẽ tạo một ứng dụng ToDo với các chức năng sau:
 
 - Xác thực người dùng với đăng nhập và đăng ký
 
@@ -57,12 +88,12 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-Database hiện nay đã sẵn sàng để xử dụng. Tiếp theo tôi sẽ tạo các migration table và sau đó migrate chúng.
+Bây giờ database đã sẵn sàng để sử dụng. Tiếp theo tôi sẽ tạo các migration table và sau đó migrate chúng.
 
 ## Tạo các table cho Migration
 Mặc định Laravel đã tạo sẵn 2 migration table (một là <code>Users</code> và một cho <code>Password_resets</code>). Tôi sẽ chỉnh sửa bảng <code>Users</code> và tạo một migration table mới là **Todo**.
 
-Đầu tiên hãy chỉnh sửa bảng <code>Users</code>. Mở tệp tin <code>{{timestamp}}_create_users_table.php</code> trong thư mục <code>database/migrations </code>. Tại thời điểm này phương thức <code>up()</code> sẽ trông như thế này:
+Đầu tiên chỉnh sửa bảng <code>Users</code>. Mở tệp tin <code>{{timestamp}}_create_users_table.php</code> trong thư mục <code>database/migrations</code>. Tại thời điểm này phương thức <code>up()</code> sẽ trông như dưới đây:
 
 ```php
 public function up()
@@ -108,7 +139,7 @@ php artisan make:migration create_todo_table
 
 ![](https://www.cloudways.com/blog/wp-content/uploads/image00-125.png)
 
-Khi lệnh trên kết thúc, một tệp tin migration sẽ được tạo. Tôi sẽ tạo một scheme trong phương thức <code>up()</code> trong tệp tin này.
+Khi lệnh trên kết thúc, một tệp tin migration sẽ được tạo. Tôi sẽ tạo một scheme trong phương thức <code>up()</code> của tệp tin này.
 
 ```php
 public function up()
@@ -126,7 +157,7 @@ public function up()
 ```
 
 Trong bảng <code>todo</code>, tôi đã tạo một primary key (khóa chính),
-một cột todo và một cột description. Tôi cũng tạo một cột category cho category và tạo một foreign key (khóa ngoài) trên <code>user_id</code> nó sẽ ánh xạ tới <code>id</code> của một <code>user</code> trong bảng <code>users</code>. Cuối cùng, tôi cũng tạo 2 cột timestamps sử dụng phương thức <code>timestamps()</code>. Hai cột này sẽ tự động cập nhật bất cứ lúc nào một <code>todo</code> được thêm hay cập nhật.
+một cột todo và một cột description. Tôi cũng tạo một cột category và tạo một foreign key (khóa ngoài) trên <code>user_id</code> nó sẽ ánh xạ tới <code>id</code> của một người dùng trong bảng <code>users</code>. Cuối cùng, tôi cũng tạo 2 cột timestamps sử dụng phương thức <code>timestamps()</code>. Hai cột này sẽ tự động cập nhật bất cứ khi nào một <code>todo</code> được thêm hay thay đổi.
 
 ## Migrating các bảng sử dụng Artisan
 Hiện tại chúng ta đã tạo tất cả các migration cần thiết cho các bảng, tôi sẽ thực thi migration với một lệnh duy nhất:
@@ -149,7 +180,7 @@ Khi lệnh hoàn tất, tất cả các bảng sẽ được tạo trong databas
 use Illuminate\Support\Facades\Schema;
 ```
 
-*Và trong phương thức <code>boot()</code> trong class, thêm dòng code sau:*
+*Và trong phương thức <code>boot()</code> của class, thêm dòng code sau:*
 
 ```php
 Schema::defaultStringLength(191);
@@ -210,7 +241,7 @@ public function todo()
 
 Phương thức <code>hasMany()</code> định nghĩa quan hệ một - nhiều trong Eloquent.
 
-Tại điểm này, tệp tin <code>User.php</code> mới sẽ trong như thế này:
+Tại điểm này, tệp tin <code>User.php</code> mới sẽ trông như thế này:
 
 ```php
 <?php
@@ -248,10 +279,12 @@ class User extends Authenticatable
 ```
 
 ## Tổng kết phần 1
-Trong phần này, tôi đã tọa một dự án Laravel mới, với database, migration table cho <code>todo</code> và chỉnh sửa <code>users</code> migration table. Tiếp theo tôi đã migrate tất cả [các bảng trong database](https://www.cloudways.com/blog/how-to-create-alter-and-drop-table-in-mysql/) sử dụng Artisan (giao diện dòng lệnh của Laravel). Sau đó tôi tạo và chỉnh sửa các controller và model liên quan.
+Trong phần này, tôi đã tạo một ứng dụng Laravel mới, với database, migration table cho <code>todo</code> và chỉnh sửa <code>users</code> migration table. Tiếp theo tôi đã migrate tất cả [các bảng trong database](https://www.cloudways.com/blog/how-to-create-alter-and-drop-table-in-mysql/) sử dụng Artisan (giao diện dòng lệnh của Laravel). Sau đó tạo và chỉnh sửa các controller và model liên quan.
 
-## Tôi sẽ làm gì trong phần tiếp theo?
+## Cái tôi sẽ làm trong phần tiếp theo?
 Trong phần tiếp theo, tôi sẽ tạo authentication cho người dùng sử dụng Artisan và chỉnh sửa nó cho ứng dụng todo. Tôi cũng sẽ chỉnh sửa <code>TodoController</code> và thiết lập nó để [thực hiện CRUD](https://www.cloudways.com/blog/execute-crud-in-mysql-php/). Tôi cũng sẽ tạo các views, và chỉnh sửa các item của todo. 
 
-## Bài liên quan
-- [Laravel vs Symfony - Cuộc chiến của các framework](posts/tech/laravel-vs-symfony-clash-of-the-frameworks/)
+## Tham khảo
+Link bài viết gốc https://www.cloudways.com/blog/create-todo-app-laravel-5-4/
+
+Bài liên quan [Laravel vs Symfony - Cuộc chiến của các framework](posts/tech/laravel-vs-symfony-clash-of-the-frameworks/)
