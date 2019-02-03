@@ -56,7 +56,7 @@ Cần phải hiểu các khái niệm:
 
 - Xác thực (authentication) là gì?
 - Phân quyền (authorization) là gì?
-- Session là gi?
+- Session là gì?
 - Cookie là gì?
 
 ## Những thứ tôi sẽ sử dụng cho hướng dẫn này
@@ -198,7 +198,7 @@ So sánh với [commit](https://github.com/DDCSLearning/authenticationIntro/comm
 *Đến đây, bạn đã hoàn thành 50% toàn bộ ứng dụng và là phần khó nhất! Hãy tiếp tục!*
 
 ## Sessions và Cookies
-HTTP là một giao thức stateless, điều đó có nghĩa là web server không theo dõi ai đang nghé thăm một trang web. Việc hiển thị nội dung cụ thể cho người dùng đã đăng nhập yêu cần phải theo dõi điều này. Vì thế sessions với một session ID đã được tạo ra. Cookies là các cặp key/value được quản lý bởi trình duyệt. Tương ứng với sessions của server.
+HTTP là một giao thức stateless, điều đó có nghĩa là web server không theo dõi ai đang nghé thăm một trang web. Việc hiển thị nội dung cụ thể cho người dùng đã đăng nhập yêu cầu phải theo dõi điều này. Vì thế sessions với một session ID đã được tạo ra. Cookies là các cặp key/value được quản lý bởi trình duyệt. Tương ứng với sessions của server.
 
 ### Thiết lập Sessions
 - thêm [express sessions](https://www.npmjs.com/package/express-session) package
